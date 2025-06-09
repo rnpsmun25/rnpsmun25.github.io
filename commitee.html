@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="z-[-1000000] h-[200vh grad relative overflow-x-hidden">
+    <!-- Navbar -->
+
+    <ul
+      id="nav"
+      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50 hidden lg:flex"
+    >
+      <!-- Left side of the navbar -->
+      <li class="float-left">
+        <a
+          href="landing.html"
+          class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+          >RNPSMUN</a
+        >
+      </li>
+
+      <!-- Centered nav items -->
+      <div
+        class="topnav-centered absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm space-x-3"
+      >
+        <li class="inline-block">
+          <a
+            href="people.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Secretariat</a
+          >
+        </li>
+        <li class="inline-block">
+          <a
+            href="commitee.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Committees</a
+          >
+        </li>
+        <li class="inline-block">
+          <a
+            href="files.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Guide</a
+          >
+        </li>
+        <li class="inline-block">
+          <a
+            href="contactus.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Contact</a
+          >
+        </li>
+      </div>
+
+      <!-- Right side of the navbar -->
+      <div class="topnav-right pr-9">
+        <li class="float-right inline-block">
+          <a
+            href="#"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline hover:font-bold hover:text-gray-300 font-bold transition-all duration-100 ease-in-out"
+            >Register</a
+          >
+        </li>
+      </div>
+    </ul>
+    <div
+      id="mySidebar"
+      class="sidebar block lg:hidden z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#000] pt-[60px] backdrop-filter backdrop-blur-2xl bg-opacity-50 transition-all duration-500"
+    >
+      <a
+        href="javascript:void(0)"
+        class="closebtn absolute top-0 right-[25px] text-[#fff] text-[10vw] ml-[50px]"
+        onclick="closeNav()"
+        >×</a
+      >
+
+      <a
+        href="landing.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >RNPSMUN</a
+      >
+      <a
+        href="people.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Secretariat</a
+      >
+      <a
+        href="commitee.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Committees</a
+      >
+      <a
+        href="files.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Guide</a
+      >
+      <a
+        href="contactus.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Contact</a
+      >
+      <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Register</a
+      >
+    </div>
+
+    <div id="main" class="block lg:hidden z-50 transition-all duration-500 p-4">
+      <button
+        onclick="openNav()"
+        class="fixed top-4 left-4 z-50 text-[7vw] text-white px-[5.405vw] py-[4.324vw] rounded-[70px] backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-lg"
+      >
+        ☰
+      </button>
+
+      <h2></h2>
+      <p></p>
+    </div>
+    <div
+      id="viewOnBigDisp"
+      class="flex items-center justify-between px-4 w-screen h-[5vh] text-white text-[3vw] text-center lg:hidden z-50 absolute top-0 bg-black bg-opacity-30 backdrop-blur-2xl fade-slide-in"
+    >
+      <span class="w-full text-center">BEST VIEWED ON LARGE DISPLAYS</span>
+      <button
+        onclick="document.getElementById('viewOnBigDisp').style.display='none'"
+        class="ml-4 flex items-center justify-center rounded-full bg-gray-700 text-white text-[4vw] leading-none hover:bg-red-500 transition duration-200"
+        style="width: 5vw; height: 5vw"
+      >
+        &times;
+      </button>
+    </div>
+
+    <!-- Main -->
+    <div
+      class="relative -mt-20 w-full overflow-x-hidden md:h-[190vh] grid py-[90px] pt-[150px] md:grid-cols-2 gap-y-[9.5vw] z-[-2] overflow-y-hidden pb-[200px] grid-cols-1"
+    >
+      <div
+        id="card1"
+        class="glass rounded-[4vw] md:w-[35vw] relative md:h-[60vh] w-[90vw] mx-auto z-10 flex md:px-0 px-[min(5vw,_20px)] items-center flex-col pt-[6.24vw] gap-[2vw] pb-5"
+      >
+        <img
+          src="../static/disec logo.jpg"
+          id="logo"
+          class="h-[max(12.65vw,_100px)] w-[max(12.65vw,_100px)] rounded-full"
+        />
+        <div
+          id="hover1"
+          class="md:opacity-0 md:hover:opacity-100 md:flex hidden -mt-[6.324vw] absolute w-full h-[100%] bg-[#1f1f1fe9] scale-[1.01] rounded-[4vw] items-center flex-col gap-[1.265vw] text-[#ffffffdb] flex justify-center z-[2]"
+        >
+          <i class="fa-thin fa-arrow-pointer text-[3.953vw]"></i>
+          <div class="">Click to learn more</div>
+        </div>
+
+        <div id="name" class="text-center text-pink-600 font-bold">DISEC</div>
+        <div
+          id="dis"
+          class="md:opacity-0 md:absolute md:w-[25vw] text-center text-slate-400 text-light md:translate-x-[-24.1vw] md:text-[1.2vw] text-[max(2vw,_10px)]"
+        >
+          Autonomous weapons and drone strikes in stateless regions raise urgent
+          ethical, legal, and humanitarian concerns. With no governing
+          authority, civilians lack protection and accountability is minimal.
+          DISEC must act noting international regulation, accountability
+          frameworks, ethical deployment standards, and mechanisms to ensure
+          compliance with human rights and international law in such areas.
+        </div>
+
+        <div
+          id="line"
+          class="md:w-2 w-1 shadow-lg md:absolute h-[16.31vh] rounded-[100vh] bg-green-600 left-[19.747vw] rotate-[90deg] mt-[max(-7vh,_-70px)] mb-[max(-8vh,_-50px)] md:rotate-0 translate-y-[3vw] md:opacity-0"
+          style="backdrop-filter: blur(30px); filter: blur(1px)"
+        ></div>
+        <div
+          id="agenda"
+          class="text-[#169c49] left-[3.162vw] md:absolute md:opacity-0 opacity-100 text-[max(1.4vw,_10px)] md:w-[27.68vw] mt-[min(5vw,_20px)] text-center"
+        >
+          <b>AGENDA: </b>Regulating the use of autonomous weapons systems and
+          drone strikes in stateless regions: Legal or lethal?
+        </div>
+
+        <div
+          id="people"
+          class="md:absolute top-0 md:translate-x-[19vw] md:translate-y-[3vw] md:block w-full grid grid-cols-2 grid-rows-2 gap-y-[max(1vw,_20px)] place-items-center"
+        >
+          <div
+            id="one"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13.05vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/amog.jpeg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="two"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/saqe.jpeg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="three"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/ruhi.jpeg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="four"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/rnps logo.jpg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card2"
+        class="glass rounded-[4vw] md:w-[35vw] relative md:h-[60vh] w-[90vw] mx-auto z-10 flex md:px-0 px-[min(5vw,_20px)] items-center flex-col pt-[6.24vw] gap-[2vw] pb-5"
+      >
+        <img
+          src="../static/unhrc logo.jpg"
+          id="logo"
+          class="h-[max(12.65vw,_100px)] w-[max(12.65vw,_100px)] rounded-full"
+        />
+        <div
+          id="hover2"
+          class="md:opacity-0 md:hover:opacity-100 md:flex hidden -mt-[6.324vw] absolute w-full h-[100%] bg-[#1f1f1fe9] scale-[1.01] rounded-[4vw] items-center flex-col gap-[1.265vw] text-[#ffffffdb] justify-center z-[2]"
+        >
+          <i class="fa-thin fa-arrow-pointer text-[3.953vw]"></i>
+          <div class="">Click to learn more</div>
+        </div>
+        <div id="name" class="text-center text-pink-600 font-bold">UNHRC</div>
+        <div
+          id="dis"
+          class="md:opacity-0 md:absolute md:w-[30vw] text-center text-slate-400 text-light md:translate-x-[-23vw] md:text-[1.2vw] text-[max(2vw,_10px)]"
+        >
+          With governments and corporations having everyone's personal data, the
+          threat of mass surveillance looms over people. This session calls upon
+          delegates to address the legal and ethical implications of
+          surveillance technologies. It challenges the Council to craft
+          international norms that uphold privacy and prevent the abuse of power
+          through technological means. The UNHRC must now ask: "In a world that
+          sees all, how do we preserve our right to live unobserved?"
+        </div>
+
+        <div
+          id="line"
+          class="md:w-2 w-1 shadow-lg md:absolute h-[16.31vh] rounded-[100vh] bg-green-600 left-[19.747vw] rotate-[90deg] mt-[max(-7vh,_-70px)] mb-[max(-8vh,_-50px)] md:rotate-0 translate-y-[3vw] md:opacity-0"
+          style="backdrop-filter: blur(30px); filter: blur(1px)"
+        ></div>
+        <div
+          id="agenda"
+          class="text-[#169c49] left-[3.162vw] md:absolute md:opacity-0 opacity-100 text-[max(1.4vw,_10px)] md:w-[27.68vw] mt-[min(5vw,_20px)] text-center"
+        >
+          <b>AGENDA: </b>Protecting the right to privacy and data protection in
+          the age of mass surveillance and artificial intelligence
+        </div>
+
+        <div
+          id="people"
+          class="md:absolute top-0 md:translate-x-[19vw] md:translate-y-[3vw] md:block w-full grid grid-cols-2 grid-rows-2 gap-y-[max(1vw,_20px)] place-items-center"
+        >
+          <div
+            id="one"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13.05vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/nith.jpeg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="two"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/eva.jpeg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="three"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/adityav.jpeg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="four"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/rnps logo.jpg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card3"
+        class="glass rounded-[4vw] md:w-[35vw] relative md:h-[60vh] w-[90vw] mx-auto z-10 flex md:px-0 px-[min(5vw,_20px)] items-center flex-col pt-[6.24vw] gap-[2vw] pb-5"
+      >
+        <img
+          src="../static/unsc logo.jpg"
+          id="logo"
+          class="h-[max(12.65vw,_100px)] w-[max(12.65vw,_100px)] rounded-full"
+        />
+        <div
+          id="hover3"
+          class="md:opacity-0 md:hover:opacity-100 md:flex hidden -mt-[6.324vw] absolute w-full h-[100%] bg-[#1f1f1fe9] scale-[1.01] rounded-[4vw] items-center flex-col gap-[1.265vw] text-[#ffffffdb] justify-center z-[2]"
+        >
+          <i class="fa-thin fa-arrow-pointer text-[3.953vw]"></i>
+          <div class="">Click to learn more</div>
+        </div>
+        <div id="name" class="text-center text-pink-600 font-bold">UNSC</div>
+        <div
+          id="dis"
+          class="md:opacity-0 md:absolute md:w-[32vw] text-center text-slate-400 text-light md:translate-x-[-23vw] md:text-[1.2vw] text-[max(2vw,_10px)]"
+        >
+          “Peace is the only battle that is worth waging” - Albert Camus Yemen
+          has been involved in a devastating war for more than a decade,
+          contributing to one of the worst humanitarian crises in the world. The
+          war is mainly between the Yemeni government and the Iran-backed Houthi
+          rebels. The Houthis, officially became a dominant force in the early
+          2000s, and took over the capital in 2014. The tension in the country
+          could be cut with a knife. Time is ticking and the country needs peace
+          once again.
+        </div>
+
+        <div
+          id="line"
+          class="md:w-2 w-1 shadow-lg md:absolute h-[16.31vh] rounded-[100vh] bg-green-600 left-[19.747vw] rotate-[90deg] mt-[max(-7vh,_-70px)] mb-[max(-8vh,_-50px)] md:rotate-0 translate-y-[3vw] md:opacity-0"
+          style="backdrop-filter: blur(30px); filter: blur(1px)"
+        ></div>
+        <div
+          id="agenda"
+          class="text-[#169c49] left-[3.162vw] md:absolute md:opacity-0 opacity-100 text-[max(1.4vw,_10px)] md:w-[27.68vw] mt-[min(5vw,_20px)] text-center"
+        >
+          <b>AGENDA: </b> Conflicts in the Middle East with special emphasis on
+          Yemen
+        </div>
+
+        <div
+          id="people"
+          class="md:absolute top-0 md:translate-x-[19vw] md:translate-y-[3vw] md:block w-full grid grid-cols-2 grid-rows-2 gap-y-[max(1vw,_20px)] place-items-center"
+        >
+          <div
+            id="one"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13.05vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/naman.jpeg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="two"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/samit.jpeg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="three"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/person.jpg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="four"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/rnps logo.jpg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="card4"
+        class="glass rounded-[4vw] md:w-[35vw] relative md:h-[60vh] w-[90vw] mx-auto z-10 flex md:px-0 px-[min(5vw,_20px)] items-center flex-col pt-[6.24vw] gap-[2vw] pb-5"
+      >
+        <img
+          src="../static/ccc logo.jpg"
+          id="logo"
+          class="h-[max(12.65vw,_100px)] w-[max(12.65vw,_100px)] rounded-full"
+        />
+        <div
+          id="hover4"
+          class="md:opacity-0 md:hover:opacity-100 md:flex hidden -mt-[6.324vw] absolute w-full h-[100%] bg-[#1f1f1fe9] scale-[1.01] rounded-[4vw] items-center flex-col gap-[1.265vw] text-[#ffffffdb] justify-center z-[2]"
+        >
+          <i class="fa-thin fa-arrow-pointer text-[3.953vw]"></i>
+          <div class="">Click to learn more</div>
+        </div>
+        <div id="name" class="text-center text-pink-600 font-bold">
+          CCC - INDIAN WAR CABINET
+        </div>
+        <div
+          id="dis"
+          class="md:opacity-0 md:absolute md:w-[35vw] text-center text-slate-400 text-light md:translate-x-[-20.1vw] md:text-[1.2vw] text-[max(2vw,_10px)]"
+        >
+          When written in Chinese, the word ‘crisis’ is composed of two
+          characters — one represents danger and the other represents
+          opportunity.” In 2040, Balochistan erupts in rebellion, declaring
+          independence from Pakistan. As militias seize key ports, global powers
+          react—China’s Gwadar interests, Iran’s border fears, and India’s
+          alleged support intensify tensions. The UN is divided, and diplomacy
+          is fragile. Will delegates defend Pakistan’s sovereignty or back
+          Baloch liberation? South Asia teeters on the edge of war. This
+          committee must navigate a crisis where danger meets opportunity—and
+          every decision could shape the course of history.
+        </div>
+
+        <div
+          id="line"
+          class="md:w-2 w-1 shadow-lg md:absolute h-[16.31vh] rounded-[100vh] bg-green-600 left-[25vw] rotate-[90deg] mt-[max(-7vh,_-70px)] mb-[max(-8vh,_-50px)] md:rotate-0 translate-y-[3vw] md:opacity-0"
+          style="backdrop-filter: blur(30px); filter: blur(1px)"
+        ></div>
+        <div
+          id="agenda"
+          class="text-[#169c49] left-[4vw] md:absolute md:opacity-0 opacity-100 text-[max(1.4vw,_10px)] md:w-[27.68vw] mt-[min(5vw,_20px)] text-center"
+        >
+          <b>AGENDA: </b>Liberation of Balochistan - 2040
+        </div>
+
+        <div
+          id="people"
+          class="md:absolute top-0 md:translate-x-[21vw] md:translate-y-[3vw] md:block w-full grid grid-cols-2 grid-rows-2 gap-y-[max(1vw,_20px)] place-items-center"
+        >
+          <div
+            id="one"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13.05vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/person.jpg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="two"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/mrud.jpeg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="three"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/haari.jpeg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="four"
+            class="glass rounded-[min(4vw,_40px)] md:w-[9vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="../static/rnps logo.jpg"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
+            />
+            <div class=""></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="strip w-[200vw] h-[47vh] bg-[#322996bd] absolute top-[32.626vh] translate-x-[-55.3vw] -rotate-45 z-[-1]"
+      ></div>
+      <div
+        class="strip w-[360vw] h-[47vh] bg-[#322996bd] absolute top-[110vh] md:top-[32.626vh] translate-x-[-70vw] md:translate-x-[-55.3vw] -rotate-45 z-[-1]"
+      ></div>
+      <div
+        class="strip w-[360vw] h-[47vh] bg-[#322996bd] absolute top-[210vh] md:top-[32.626vh] translate-x-[-70vw] md:translate-x-[-55.3vw] -rotate-45 z-[-1]"
+      ></div>
+      <div
+        class="strip w-[360vw] h-[47vh] bg-[#322996bd] absolute top-[310vh] md:top-[32.626vh] translate-x-[-70vw] md:translate-x-[-55.3vw] -rotate-45 z-[-1]"
+      ></div>
+    </div>
+
+    <footer
+      class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font"
+    >
+      <div
+        class="flex flex-col flex-wrap items-center px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
+      >
+        <!-- Logo and Icons -->
+        <div
+          class="flex flex-col w-full md:w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh] items-center mb-10 md:mb-0"
+        >
+          <div class="w-36 h-36 mt-[1.2rem]">
+            <img class="w-96 object-cover" src="../static/nps.png" />
+          </div>
+          <div class="ml-2 mt-4">
+            <span
+              class="flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start gap-6"
+            >
+              <a
+                href="tel:08023350361"
+                class="text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i
+                  class="fa-thin font-semilight fa-circle-phone scale-[1.2]"
+                ></i>
+              </a>
+              <a
+                href="mailto:rnpsmun24@gmail.com"
+                class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i class="fa-thin font-semilight fa-envelope scale-[1.2]"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/rnpsmun2023/"
+                class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i class="fa-brands opacity-[0.7] fa-instagram scale-[1.2]"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <!-- Link Sections -->
+        <div
+          class="flex flex-col md:flex-row flex-grow w-full md:w-auto justify-center md:justify-between text-center md:pl-20 md:mt-0 md:text-left gap-8 md:gap-0"
+        >
+          <!-- About -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                About
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="people.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Secretariat</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="commitee.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Committees</a
+                  >
+                </li>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Resources -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                Resources
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="contactus.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Contact Us</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="files.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Guide</a
+                  >
+                </li>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                Contact
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="mailto:rnpsmun24@gmail.com"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Send a Message</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="registerparthere"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Register Now</a
+                  >
+                </li>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Text -->
+      <div class="mx-auto mt-10 md:mt-[-5vh] mb-5 flex flex-col text-center">
+        <div class="text-teal-400">© R-NPSMUN Inc. All rights reserved.</div>
+        <div class="name tracking-[1px] mt-3">
+          Made by Vrishank R, Shrivardhan C, Athreya S
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<style>
+  * {
+    transition: opacity ease 0.3s;
+  }
+
+  @keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-slide-in {
+    animation: fadeSlideIn 1s ease-out forwards;
+  }
+  .glass {
+    background: rgba(39, 39, 39, 0.1);
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    /* background-color: gray; */
+  }
+
+  .name {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  @keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-slide-in {
+    animation: fadeSlideIn 1s ease-out forwards;
+  }
+  .strip {
+    filter: blur(70px);
+    /* -webkit-backdrop-filter: blur(100px); */
+  }
+
+  ul * {
+    font-weight: 200 !important;
+    color: white;
+  }
+
+  footer * {
+    font-weight: 200 !important;
+  }
+
+  body {
+    background: radial-gradient(#0c1226, #161d3a);
+  }
+</style>
+
+<script>
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "100%";
+    document.getElementById("main").style.marginLeft = "25%";
+    document.getElementById("main").style.display = "none";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("main").style.display = "block";
+  }
+  const isMobile = window.innerWidth <= 768;
+  clicked = false;
+
+  window.addEventListener("resize", () => {
+    const isMobile = window.innerWidth <= 768;
+
+    if (window.innerWidth <= 768) {
+      [
+        "#card1",
+        "#card2",
+        "#card3",
+        "#card4",
+        "#logo",
+        "#name",
+        "#dis",
+        "#line",
+        "#agenda",
+        "#people",
+        "#one",
+        "#two",
+        "#three",
+        "#four",
+        "#hover1",
+        "#hover2",
+        "#hover3",
+        "#hover4",
+      ].forEach((item) => {
+        gsap.set(item, { clearProps: "all" });
+      });
+    }
+  });
+  t1 = gsap.timeline({
+    paused: true,
+    defaults: { duration: "0.3", ease: "power3.out" },
+  });
+  t1.to("#card1", {
+    width: "85vw",
+    height: "90vh",
+    zIndex: 1000,
+    x: "7.1vw",
+    y: "-4.07vh",
+  })
+    .to(
+      "#card1 #logo",
+      {
+        x: "-23.7vw",
+        y: "-4.9vh",
+        duration: "0.5",
+      },
+      "+=0.2"
+    )
+    .to(
+      "#card1 #name",
+      {
+        x: "-23.7vw",
+        y: "-4.9vh",
+        duration: "0.5",
+        color: "#94a3b8",
+      },
+      "<"
+    )
+    .to("#card1 #dis", {
+      opacity: 1,
+      y: "+32.62vh",
+    })
+    .to("#card1 #line", {
+      opacity: 1,
+      x: "+=19.75vw",
+      y: "+=-4.9vh",
+      height: "74.5vh",
+    })
+
+    .to("#card1 #agenda", {
+      opacity: 1,
+      x: "+45vw",
+    })
+    .to("#card1 #one", {
+      opacity: 1,
+      y: "+29.36vh",
+      duration: 0.3,
+      ease: "back.out(1.2)",
+    })
+    .to(
+      "#card1 #two",
+      {
+        opacity: 1,
+        y: "+29.36vh",
+        duration: 0.3,
+        ease: "back.out(1.2)",
+      },
+      ">-0.20"
+    )
+    .to(
+      "#card1 #three",
+      {
+        opacity: 1,
+        y: "+57.09vh",
+        duration: 0.4,
+        ease: "back.out(1.2)",
+      },
+      ">-0.30"
+    )
+    .to(
+      "#card1 #four",
+      {
+        opacity: 1,
+        y: "+57.09vh",
+        duration: 0.4,
+        ease: "back.out(1.2)",
+      },
+      ">-0.30"
+    );
+
+  t3 = gsap.timeline({
+    paused: true,
+    defaults: { duration: "0.3", ease: "sine.inOut" },
+  });
+  t3.to("#card3", {
+    width: "85vw",
+    height: "90vh",
+    zIndex: 1000,
+    x: "7.1vw",
+    y: "-4.07vh",
+  })
+    .to(
+      "#card3 #logo",
+      {
+        x: "-23vw",
+        y: "-4.9vh",
+        duration: "0.5",
+      },
+      "+=0.2"
+    )
+    .to(
+      "#card3 #name",
+      {
+        x: "-23vw",
+        y: "-4.9vh",
+        duration: "0.5",
+        color: "#94a3b8",
+      },
+      "<"
+    )
+    .to("#card3 #dis", {
+      opacity: 1,
+      y: "+32.62vh",
+    })
+    .to("#card3 #line", {
+      opacity: 1,
+      x: "+=19.75vw",
+      y: "-=4.9vh",
+      height: "74.5vh",
+    })
+
+    .to("#card3 #agenda", {
+      opacity: 1,
+      x: "+45vw",
+    })
+    .to("#card3 #one", {
+      opacity: 1,
+      y: "+29.36vh",
+      duration: 0.3,
+      ease: "back.out(1.2)",
+    })
+    .to(
+      "#card3 #two",
+      {
+        opacity: 1,
+        y: "+29.36vh",
+        duration: 0.3,
+        ease: "back.out(1.2)",
+      },
+      ">-0.20"
+    )
+    .to(
+      "#card3 #three",
+      {
+        opacity: 1,
+        y: "+57.09vh",
+        duration: 0.4,
+        ease: "back.out(1.2)",
+      },
+      ">-0.30"
+    )
+    .to(
+      "#card3 #four",
+      {
+        opacity: 1,
+        y: "+57.09vh",
+        duration: 0.4,
+        ease: "back.out(1.2)",
+      },
+      ">-0.30"
+    );
+
+  t2 = gsap.timeline({
+    paused: true,
+    defaults: { duration: "0.3", ease: "sine.inOut" },
+  });
+  t2.to("#card2", {
+    width: "85vw",
+    height: "90vh",
+    zIndex: 1000,
+    x: "-43.44vw",
+    y: "-4.07vh",
+  })
+    .to(
+      "#card2 #logo",
+      {
+        x: "-23vw",
+        y: "-4.9vh",
+        duration: "0.5",
+      },
+      "+=0.2"
+    )
+    .to(
+      "#card2 #name",
+      {
+        x: "-23vw",
+        y: "-4.9vh",
+        duration: "0.5",
+        color: "#94a3b8",
+      },
+      "<"
+    )
+    .to("#card2 #dis", {
+      opacity: 1,
+      y: "+32.62vh",
+    })
+    .to("#card2 #line", {
+      opacity: 1,
+      x: "+=19.75vw",
+      y: "-=4.9vh",
+      height: "74.5vh",
+    })
+
+    .to("#card2 #agenda", {
+      opacity: 1,
+      x: "+45vw",
+    })
+    .to("#card2 #one", {
+      opacity: 1,
+      y: "+29.36vh",
+      duration: 0.3,
+      ease: "back.out(1.2)",
+    })
+    .to(
+      "#card2 #two",
+      {
+        opacity: 1,
+        y: "+29.36vh",
+        duration: 0.3,
+        ease: "back.out(1.2)",
+      },
+      ">-0.20"
+    )
+    .to(
+      "#card2 #three",
+      {
+        opacity: 1,
+        y: "+57.09vh",
+        duration: 0.4,
+        ease: "back.out(1.2)",
+      },
+      ">-0.30"
+    )
+    .to(
+      "#card2 #four",
+      {
+        opacity: 1,
+        y: "+57.09vh",
+        duration: 0.4,
+        ease: "back.out(1.2)",
+      },
+      ">-0.30"
+    );
+
+  t4 = gsap.timeline({
+    paused: true,
+    defaults: { duration: "0.3", ease: "sine.inOut" },
+  });
+  t4.to("#card4", {
+    width: "85vw",
+    height: "90vh",
+    zIndex: 1000,
+    x: "-43.44vw",
+    y: "-4.07vh",
+  })
+    .to(
+      "#card4 #logo",
+      {
+        x: "-20.7vw",
+        y: "-4.9vh",
+        duration: "0.5",
+      },
+      "+=0.2"
+    )
+    .to(
+      "#card4 #name",
+      {
+        x: "-20.7vw",
+        y: "-4.9vh",
+        duration: "0.5",
+        color: "#94a3b8",
+      },
+      "<"
+    )
+    .to("#card4 #dis", {
+      opacity: 1,
+      y: "+32.62vh",
+    })
+    .to("#card4 #line", {
+      opacity: 1,
+      x: "+=19.75vw",
+      y: "-=4.9vh",
+      height: "74.5vh",
+    })
+
+    .to("#card4 #agenda", {
+      opacity: 1,
+      x: "+46vw",
+    })
+    .to("#card4 #one", {
+      opacity: 1,
+      y: "+29.36vh",
+      duration: 0.3,
+      ease: "back.out(1.2)",
+    })
+    .to(
+      "#card4 #two",
+      {
+        opacity: 1,
+        y: "+29.36vh",
+        duration: 0.3,
+        ease: "back.out(1.2)",
+      },
+      ">-0.20"
+    )
+    .to(
+      "#card4 #three",
+      {
+        opacity: 1,
+        y: "+57.09vh",
+        duration: 0.4,
+        ease: "back.out(1.2)",
+      },
+      ">-0.30"
+    )
+    .to(
+      "#card4 #four",
+      {
+        opacity: 1,
+        y: "+57.09vh",
+        duration: 0.4,
+        ease: "back.out(1.2)",
+      },
+      ">-0.30"
+    );
+
+  card1 = document.getElementById("card1");
+  card2 = document.getElementById("card2");
+  card3 = document.getElementById("card3");
+  card4 = document.getElementById("card4");
+  clicked = false;
+
+  card1.addEventListener("click", function () {
+    if (isMobile) {
+    } else {
+      if (clicked == false) {
+        document
+          .getElementById("hover1")
+          .classList.remove("md:hover:opacity-100");
+        t1.play();
+        clicked = true;
+      } else {
+        t1.reverse();
+        t1.eventCallback("onReverseComplete", () => {
+          document
+            .getElementById("hover1")
+            .classList.add("md:hover:opacity-100");
+        });
+        clicked = false;
+      }
+    }
+  });
+
+  card2.addEventListener("click", function () {
+    if (isMobile) {
+    } else {
+      if (clicked == false) {
+        document
+          .getElementById("hover2")
+          .classList.remove("md:hover:opacity-100");
+        t2.play();
+        clicked = true;
+      } else {
+        t2.reverse();
+        t2.eventCallback("onReverseComplete", () => {
+          document
+            .getElementById("hover2")
+            .classList.add("md:hover:opacity-100");
+        });
+        clicked = false;
+      }
+    }
+  });
+
+  card3.addEventListener("click", function () {
+    if (isMobile) {
+    } else {
+      if (clicked == false) {
+        document
+          .getElementById("hover3")
+          .classList.remove("md:hover:opacity-100");
+        t3.play();
+        clicked = true;
+      } else {
+        t3.reverse();
+        t3.eventCallback("onReverseComplete", () => {
+          document
+            .getElementById("hover3")
+            .classList.add("md:hover:opacity-100");
+        });
+        clicked = false;
+      }
+    }
+  });
+
+  card4.addEventListener("click", function () {
+    if (isMobile) {
+    } else {
+      if (clicked == false) {
+        document
+          .getElementById("hover4")
+          .classList.remove("md:hover:opacity-100");
+        t4.play();
+        clicked = true;
+      } else {
+        t4.reverse();
+        t4.eventCallback("onReverseComplete", () => {
+          document
+            .getElementById("hover4")
+            .classList.add("md:hover:opacity-100");
+        });
+        clicked = false;
+      }
+    }
+  });
+</script>

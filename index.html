@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link src="https://cdn.tailwindcss.com"></link>
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+
+    <!-- Data AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.g/static.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Quicksand:wght@300..700&family=Rozha+One&display=swap" rel="stylesheet">
+  <script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("main").style.display="none";
+
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+    document.getElementById("main").style.display="block";
+}
+</script>
+
+ <style>
+    @keyframes fadeSlideIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-20%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-slide-in {
+        animation: fadeSlideIn 1s ease-out forwards;
+      }
+
+    .center-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .bigcont {
+      padding: 3vw;
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 2vw 3vw;
+      justify-content: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      .bigcont {
+        grid-template-columns: auto;
+        width: 90vw;
+      }
+
+      .container {
+        width: 80vw !important;
+        height: auto !important;
+        padding: 1.5vw 2vw 2vw !important;
+        box-shadow: 0 2.4vw 5vw rgba(0, 0, 0, 0.4) !important;
+      }
+
+      .cancel-btn,
+      .read-more {
+        display: none !important;
+      }
+
+      .full-text {
+        display: inline !important;
+        opacity: 1 !important;
+      }
+
+      .preview-text {
+        font-size: 1.8rem;
+        text-decoration: underline white;
+        text-align: center;
+      }
+    }
+
+    .container {
+      width: 25vw;
+      height: 10.7vw;
+      text-align: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      transition: width 0.3s ease-in-out, min-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+      background: rgba(212, 212, 212, 0.1);
+      backdrop-filter: blur(7px);
+      border: 0.5px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 45px 95px rgba(0, 0, 0, 0.4);
+      position: relative;
+      padding: 0.5vw 1.5vw;
+      box-sizing: border-box;
+    }
+
+    .container:hover {
+      border: 3px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .container.expanded {
+      width: 44vw;
+      height: 30vw;
+      padding: 1.5vw 2vw 2vw;
+      justify-content: space-evenly;
+      overflow-y: auto;
+    }
+    .container.expanded .bigcont{
+      width: 100vw;
+    }
+
+    .cancel-btn {
+      position: absolute;
+      top: 0.5vw;
+      right: 0.5vw;
+      color: gray;
+      border: none;
+      padding: 0.3vw 0.6vw;
+      cursor: pointer;
+      display: none;
+      z-index: 2;
+      border-radius: 20px;
+      font-size: 12px;
+      background: transparent;
+      transition: background-color 0.1s ease-in-out;
+    }
+
+    .cancel-btn:hover {
+      color: grey;
+    }
+
+    .container.expanded .cancel-btn {
+      display: block;
+    }
+
+    .read-more {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.3);
+      padding: 0.4vw 0.8vw;
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+      margin-top: 1vw;
+      align-self: center;
+      transition: opacity 0.3s ease-in-out, background-color 0.2s ease;
+      background: transparent;
+    }
+
+    .read-more.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .text-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 20px;
+      padding-top: 1vw;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    .preview-text {
+      display: block;
+      border-radius: 20px;
+      line-height: 1.2;
+      color: #26a69a;
+      text-align: center;
+    }
+
+    .container.expanded .preview-text {
+      font-size: 1.8rem;
+      text-decoration: underline white;
+      text-align: center;
+      transition: all 0.3s ease;
+      display: inline;
+    }
+
+    .full-text {
+      opacity: 0;
+      display: none;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 20px;
+      padding: 0.5vw 0;
+      text-align: left;
+    }
+
+    .full-text.visible {
+      opacity: 1;
+      display: inline;
+    }
+  </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body class="md:w-[100vw] left-0 overflow-x-hidden">
+
+    
+    <ul
+      id="nav"
+      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50 hidden lg:flex"
+    >
+      <!-- Left side of the navbar -->
+      <li class="float-left">
+        <a
+          href="landing.html"
+          class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+          >RNPSMUN</a
+        >
+      </li>
+
+      <!-- Centered nav items -->
+      <div
+        class="topnav-centered absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm space-x-3"
+      >
+        <li class="inline-block">
+          <a
+            href="people.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Secretariat</a
+          >
+        </li>
+        <li class="inline-block">
+          <a
+            href="commitee.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Committees</a
+          >
+        </li>
+        <li class="inline-block">
+          <a
+            href="files.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Guide</a
+          >
+        </li>
+        <li class="inline-block">
+          <a
+            href="contactus.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Contact</a
+          >
+        </li>
+      </div>
+
+      <!-- Right side of the navbar -->
+      <div class="topnav-right pr-9">
+        <li class="float-right inline-block">
+          <a
+            href="#"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline hover:font-bold hover:text-gray-300 font-bold transition-all duration-100 ease-in-out"
+            >Register</a
+          >
+        </li>
+      </div>
+    </ul>
+    <div id="mySidebar" class="sidebar block lg:hidden z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#000] pt-[60px] backdrop-filter backdrop-blur-2xl bg-opacity-50 transition-all duration-500">
+  <a href="javascript:void(0)" class="closebtn absolute top-0 right-[25px] text-[#fff] text-[10vw] ml-[50px]" onclick="closeNav()">×</a>
+ 
+    <a href="landing.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">RNPSMUN</a>
+    <a href="people.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Secretariat</a>
+    <a href="commitee.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Committees</a>
+    <a href="files.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Guide</a>
+    <a href="contactus.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Contact</a>
+    <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Register</a>
+  </div>
+
+<div id="main" class="block lg:hidden z-50 transition-all duration-500 p-4">
+  <button 
+    onclick="openNav()" 
+    class="fixed top-4 left-4 z-50 text-[7vw] text-white px-[5.405vw] py-[4.324vw] rounded-[70px] 
+          backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-lg">
+    ☰
+  </button>
+
+  <h2></h2>
+  <p></p>
+</div>
+ <div id="viewOnBigDisp" class="flex items-center justify-between px-4 w-screen h-[5vh]  text-white text-[3vw] text-center lg:hidden z-50 absolute top-0 bg-black bg-opacity-30 backdrop-blur-2xl fade-slide-in">
+      <span class="w-full text-center">BEST VIEWED ON LARGE DISPLAYS</span>
+  <button 
+  onclick="document.getElementById('viewOnBigDisp').style.display='none'" 
+  class="ml-4 flex items-center justify-center rounded-full bg-gray-700 text-white text-[4vw] leading-none hover:bg-red-500 transition duration-200"
+  style="width: 5vw; height: 5vw;">
+  &times;
+</button>
+</div>
+
+
+<div class="strip md:w-[200vw] h-72 bg-[#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"></div>
+<div class="strip md:w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-550px] -rotate-45 z-[-1]"></div>
+<div class="strip md:w-[360vw] h-72 bg-[#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"></div>
+<div class="strip md:w-[275px] aspect-square bg-[#322996] absolute top-[360vh] left-[50vw] rounded-full z-[-1]"></div>
+<div class="strip md:w-[275px] aspect-square bg-[#322996] absolute top-[380vh] left-[20vw] rounded-full z-[-1]"></div>
+<div class="strip md:w-[275px] aspect-square bg-[#322996] absolute top-[380vh] left-[80vw] rounded-full z-[-1]"></div>
+
+
+<!-- Countdown -->
+<section class="w-[92vw] h-[80vh] bg-black-900">
+    <div class="relative md:translate-y-24 md:flex-row flex-col flex items-center gap-[6.5vw]  justify-center">
+    <div id="day" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] md:translate-x-0 translate-x-[-10vw] md:mt-auto mt-[20vh]">
+      <p class="text-[#169948]" id="days"></p>
+      <p class="text-[#169948] absolute md:bottom-[-3vw] md:right-auto right-[min(-20vw,_-100px)] text-[max(1.2vw,_14px)] font-semibold tracking-[3px]">DAYS</p>
+    </div>
+    
+    <div id="hour" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] md:translate-x-0 translate-x-[-10vw]">
+      <p class="text-[#169948]" id="hours"></p>
+      <p class="text-[#169948] absolute md:bottom-[-3vw] md:right-auto right-[min(-20vw,_-100px)] text-[max(1.2vw,_14px)] font-semibold tracking-[3px]">HOURS</p>
+    </div>
+    
+    <div id="min" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] md:translate-x-0 translate-x-[-10vw]">
+      <p class="text-[#169948]" id="mins"></p>
+      <p class="text-[#169948] absolute md:bottom-[-3vw] md:right-auto right-[min(-20vw,_-100px)] text-[max(1.2vw,_14px)] font-semibold tracking-[3px]">MINUTES</p>
+    </div>
+    
+    <div id="sec" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] md:translate-x-0 translate-x-[-10vw]">
+      <p class="text-[#169948]" id="secs"></p>
+      <p class="text-[#169948] absolute md:bottom-[-3vw] md:right-auto right-[min(-20vw,_-100px)] text-[max(1.2vw,_14px)] font-semibold tracking-[3px]">SECONDS</p>
+    </div>
+    <p id="to" class="hidden md:inline font absolute text-[#169948] md:bottom-[-40px] md:top-auto top-[4vh] text-[max(6.5vw,_30px)] font-bold md:translate-x-[-400px] md:opacity-0 md:translate-y-[170px] md:tracking-[2px] translate-y-[3vh]">TO</p>
+    <p id="mun" class="font absolute text-[#169948] md:bottom-[-40px] md:top-auto top-[4vh] text-[max(6.5vw,_30px)] font-bold md:translate-x-[12vw] md:opacity-0 md:translate-y-[170px] md:tracking-[2px] translate-y-[-3vh]">RNPSMUN 25'</p>
+    <p id="in" class="md:hidden inline font absolute text-[#169948] md:bottom-[-40px] md:top-auto top-[max(8vh,_50px)] text-[max(6.5vw,_30px)] font-bold md:translate-x-[200px] md:opacity-0 md:translate-y-[170px] md:tracking-[2px] translate-y-[-3vh]">IN</p>
+    <p class="date absolute md:opacity-0 right-[10px] md:translate-x-[75px] md:bottom-auto bottom-[-10vh] md:translate-y-[290px] text-[max(3.15vw,_20px)] text-[#e16383] tracking-[clamp(1px,_0.3vw,_3px)]">3 / 4</p>
+    <p class="date absolute md:opacity-0 right-1 md:translate-x-[75px] md:bottom-auto bottom-[-13vh] md:translate-y-[330px] text-[max(3.5vw,_20px)] text-[#e16383] tracking-[clamp(1px,_0.3vw,_4px)]">JULY</p>
+    </div>
+
+    <div id="link" class="links md:opacity-0 absolute translate-y-[5vh] md:translate-y-0 md:bottom-auto left-5 md:translate-x-[-30px] flex gap-[2px]">
+        <a href="https://www.instagram.com/rnpsmun2023/" class="p-2 border border-[#e16383] border-[1.5px] md:translate-y-[350px] scale-[0.8] w-12 aspect-square grid flex items-center justify-center rounded-full"><i class="text-[#e16383] text-[20px] fa-brands fa-instagram fa-thin"></i></a>
+        <a href="mailto:rnpsmun24@gmail.com" class="p-2 border border-[#e16383] border-[1.5px] md:translate-y-[350px] scale-[0.8] w-12 aspect-square grid flex items-center justify-center rounded-full"><i class="text-[#e16383] text-[20px] fa-thin fa-envelope"></i></a>
+        <a href="tel:08023350361" class="p-2 border border-[#e16383] border-[1.5px] md:translate-y-[350px] scale-[0.8] w-12 aspect-square grid flex items-center justify-center rounded-full"><i class="text-[#e16383] text-[20px] fa-thin fa-circle-phone"></i></a>
+    </div>
+
+</section>
+
+
+<!-- Letters -->
+<div id="letters" class="md:mt-10 bigcont mt-[40vh]">
+    <div class="center-wrapper">
+      <div id="expandableDiv" class="container" data-expandable>
+        <button type="button" class="cancel-btn" aria-label="Collapse content" aria-expanded="false">X</button>
+        <div class="text-wrapper">
+          <div class="preview-text">Letter from the Secretary General</div>
+          <br /><br />
+          <div id="fullText" class="full-text" aria-hidden="true">
+            Greetings delegates! <br /><br />
+              On behalf of the RNPSMUN 2025 family, I am honoured to extend my warmest welcome to each and every one of you to the 9th edition of RNPSMUN. This MUN seeks to bring out the best in each delegate, in terms of both diplomacy and leadership, and I can assure you that by the end of these two days, not only would you have learnt a lot more than you expected, but also grown into a more confident and assertive person. The rigorous efforts which have gone in for the past numerous weeks reflect in what we all strive for – a glorious success of this conference. With four engaging committees, each with exciting agendas, a professional Executive Board, an enthusiastic Organizing Committee and a dedicated Secretariat, we promise you an educational and fun-filled conference, along with a great learning experience and lots of gratifying memories.
+
+From being a nervous first timer a few years ago to being the Secretary General of RNPSMUN 2025, the journey has been phenomenal, and I truly hope you find MUNing as delightful as I do. Regardless of whether you win or not, it is the impact you make that matters most. As future global citizens, it is our responsibility to find solutions for the various pressing issues that plague the world today, and change, after all, starts with small conversations among people who care. This conference is a small step that will go a long way. Please feel free to reach out to me in case of any queries.
+
+Looking forward to meeting you all!
+          </div>
+        </div>
+        <button type="button" class="read-more" aria-label="Expand content" aria-expanded="false">
+          Click to read more
+        </button>
+      </div>
+    </div>
+
+    <div class="center-wrapper">
+      <div id="expandableDiv1" class="container" data-expandable>
+        <button type="button" class="cancel-btn" aria-label="Collapse content" aria-expanded="false">X</button>
+        <div class="text-wrapper">
+          <div class="preview-text">What is RNPSMUN?</div>
+          <br /><br />
+          <div id="fullText1" class="full-text" aria-hidden="true">
+            An amalgamation of consistent committees fused with a few unconventional ones,
+            we have ensured that each delegate, new or experienced, has something to look forward to.
+            Delegates will have to think on their feet to keep up with the pace of the debate,
+            combating the obstacles posed, while sticking to the portfolios represented.
+            <br /><br />Alliances will be made, strategies devised, while keeping the nations’
+            best interests at heart. Factual knowledge along with rational arbitrations will
+            help sail you through! So delegates, come be a part of this exhilarating experience!
+          </div>
+        </div>
+        <button type="button" class="read-more" aria-label="Expand content" aria-expanded="false">
+          Click to read more
+        </button>
+      </div>
+    </div>
+  </div>
+
+<!-- Timelines -->
+<section class="mt-20 flex flex-col items-center">
+    <div class="font md:translate-y-[80px] relative text-[max(10vw,_40px)] text-[#169948] tracking-[7px]">THE <p class="inline tracking-[2px]">Schedule</p></div>
+      <div class="w-[100vw] h-[150vh] p-8 overflow-hidden flex flex-col items-center justify-center gap-[30px]">
+
+        <!-- Day 1 - Mobile Layout -->
+        <div class="block w-4/5 md:hidden rounded-[2vw] text-white flex flex-col items-center px-6 py-8 font-sans  bg-[#161D3A] py-8">
+          <div class="mb-6 mt-2 text-center w-full">
+            <h1 class="text-2xl font-extrabold tracking-widest text-[#2BD4A9] drop-shadow">DAY 01</h1>
+          </div>
+          <div class="w-full max-w-xs mb-6 px-1 text-sm font-semibold text-white/90">
+            <div class="flex flex-col items-center gap-1 border-b-2 border-white/20 pb-3">
+              <span id="time1m" class="tracking-wide text-center">8:30 - 9:00</span>
+              <span id="number1m" class="text-white/60 text-center">1 of 6</span>
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col items-center justify-start text-center gap-4 max-w-[90%] mt-4">
+            <h2 id="title1m" class="text-2xl font-bold text-white/90">Inaugural</h2>
+            <p id="des1m" class="text-white/60 text-sm leading-relaxed">
+              Welcome to the event! This is the inaugural session to kick things off.
+            </p>
+          </div>
+          <div class="mb-4 mt-5 flex items-center justify-center gap-12">
+            <button onclick="prevStep1()" class="w-12 h-12 bg-[#2BD4A9] text-[#0C1226] text-2xl rounded-full shadow-lg hover:scale-105 transition">&larr;</button>
+            <button onclick="nextStep1()" class="w-12 h-12 bg-[#2BD4A9] text-[#0C1226] text-2xl rounded-full shadow-lg hover:scale-105 transition">&rarr;</button>
+          </div>
+        </div>
+
+        <!-- Day 1 - PC Layout -->
+        <div class="w-[70vw] h-[50vh] p-12 overflow-hidden shadow-xl bg-[#161D3A] rounded-xl hidden md:block">
+
+        <div class="flex justify-between  items-center mb-6 relative">
+          <!-- Gray timeline line -->
+          <div class="absolute left-0 right-0 h-[3px] bg-gray-500 z-0"></div>
+
+          <!-- Background Dots -->
+          <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-0 flex justify-between items-center px-0" id="">
+            <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+          </div>
+
+          <!-- Animated Active Dot -->
+            <div id="dot1" class="w-4 h-4 bg-[#2BD4A9] border-2 border-white rounded-full absolute top-1/2 -translate-y-1/2 z-10"></div>
+            </div>
+
+            <p id="time1" class="text-md ml-2 text-white mb-4">8:15 – 8:45</p>
+
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                  <h2 class="mt-6 text-6xl font-extrabold text-white/20 leading-none mb-6">Day<br>01</h2>
+                  
+                </div>
+
+                <div class="relative w-[40vw]" id="content">
+                <h3 class="fade1 text-xl font-semibold mb-2 text-white" id="title1">Inaugural</h3>
+                <p class="fade1 text-white/70 mb-4" id="des1">
+                    Welcome to the event! This is the inaugural session to kick things off.
+                </p>
+                <div class="absolute translate-x-[260px] bottom-2 flex items-center gap-4 scale-[0.8]">
+                      <button onclick="prevStep1()" class="w-12 h-12 rounded-full bg-[#2BD4A9] text-[#0C1226] text-xl font-bold">&larr;</button>
+                      <span id="number1" class="text-white text-lg" id="step-count">1 of 6</span>
+                      <button onclick="nextStep1()" class="w-12 h-12 rounded-full bg-[#2BD4A9] text-[#0C1226] text-xl font-bold">&rarr;</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 2 - Mobile Layout -->
+        <div class="block w-4/5 md:hidden rounded-[2vw] text-white flex flex-col items-center px-6 py-8 font-sans  bg-[#161D3A] py-8">
+          <div class="mb-6 mt-2 text-center w-full">
+            <h1 class="text-2xl font-extrabold tracking-widest text-[#2BD4A9] drop-shadow">DAY 02</h1>
+          </div>
+          <div class="w-full max-w-xs mb-6 px-1 text-sm font-semibold text-white/90">
+            <div class="flex flex-col items-center gap-1 border-b-2 border-white/20 pb-3">
+              <span id="time2m" class="tracking-wide text-center">8:15 - 10:15</span>
+              <span id="number2m" class="text-white/60 text-center">1 of 6</span>
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col items-center justify-start text-center gap-4 max-w-[90%] mt-4">
+            <h2 id="title2m" class="text-2xl font-bold text-white/90">Session 04</h2>
+            <p id="des2m" class="text-white/60 text-sm leading-relaxed">
+              We restart the MUN on Day 02 with the 4th session!
+            </p>
+          </div>
+          <div class="mb-4 mt-5 flex items-center justify-center gap-12">
+            <button onclick="prevStep2()" class="w-12 h-12 bg-[#2BD4A9] text-[#0C1226] text-2xl rounded-full shadow-lg hover:scale-105 transition">&larr;</button>
+            <button onclick="nextStep2()" class="w-12 h-12 bg-[#2BD4A9] text-[#0C1226] text-2xl rounded-full shadow-lg hover:scale-105 transition">&rarr;</button>
+          </div>
+        </div>
+
+        <!-- Day 2 - PC Layout -->
+        <div class="mt-20 w-[70vw] h-[50vh] p-12 overflow-hidden shadow-xl bg-[#161D3A] rounded-xl hidden md:block">
+
+        <div class="flex justify-between items-center mb-6 relative">
+          <!-- Gray timeline line -->
+          <div class="absolute left-0 right-0 h-[3px] bg-gray-500 z-0"></div>
+
+          <!-- Background Dots -->
+          <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-0 flex justify-between items-center px-0">
+            <div id="bgdot0" class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div id="bgdot1" class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div id="bgdot2" class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div id="bgdot3" class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div id="bgdot4" class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div id="bgdot5" class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+          </div>
+
+          <!-- Animated Active Dot -->
+            <div id="dot2" class="w-4 h-4 bg-[#2BD4A9] border-2 border-white rounded-full absolute top-1/2 -translate-y-1/2 z-10"></div>
+            </div>
+
+            <p id="time2" class="text-md ml-2 text-white mb-4">8:15 – 10:15</p>
+
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                  <h2 class="mt-6 text-6xl font-extrabold text-white/20 leading-none mb-6">Day<br>02</h2>
+                  
+                </div>
+
+                <div class="relative w-[40vw]" id="content">
+                <h3 class="fade2 text-xl font-semibold mb-2 text-white" id="title2">Session 04</h3>
+                <p class="fade2 text-white/70 mb-4" id="des2">
+                  We restart the mun on Day 02 with the 4th session!
+                </p>
+                <div class="absolute translate-x-[260px] bottom-2 flex items-center gap-4 scale-[0.8]">
+                      <button onclick="prevStep2()" class="w-12 h-12 rounded-full bg-[#2BD4A9] text-[#0C1226] text-xl font-bold">&larr;</button>
+                      <span id="number2" class="text-white text-lg" id="step-count">1 of 6</span>
+                      <button onclick="nextStep2()" class="w-12 h-12 rounded-full bg-[#2BD4A9] text-[#0C1226] text-xl font-bold">&rarr;</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+</section>
+      
+  <footer
+      class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font"
+    >
+      <div
+        class="flex flex-col flex-wrap items-center px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
+      >
+        <!-- Logo and Icons -->
+        <div
+          class="flex flex-col w-full md:w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh] items-center mb-10 md:mb-0"
+        >
+          <div class="w-36 h-36 mt-[1.2rem]">
+            <img class="w-96 object-cover" src="../static/nps.png" />
+          </div>
+          <div class="ml-2 mt-4">
+            <span
+              class="flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start gap-6"
+            >
+              <a
+                href="tel:08023350361"
+                class="text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i
+                  class="fa-thin font-semilight fa-circle-phone scale-[1.2]"
+                ></i>
+              </a>
+              <a
+                href="mailto:rnpsmun24@gmail.com"
+                class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i class="fa-thin font-semilight fa-envelope scale-[1.2]"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/rnpsmun2023/"
+                class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i class="fa-brands opacity-[0.7] fa-instagram scale-[1.2]"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <!-- Link Sections -->
+        <div
+          class="flex flex-col md:flex-row flex-grow w-full md:w-auto justify-center md:justify-between text-center md:pl-20 md:mt-0 md:text-left gap-8 md:gap-0"
+        >
+          <!-- About -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                About
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="people.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Secretariat</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="commitee.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Committees</a
+                  >
+                </li>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Resources -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                Resources
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="contactus.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Contact Us</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="files.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Guide</a
+                  >
+                </li>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                Contact
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="mailto:rnpsmun24@gmail.com"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Send a Message</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="registerparthere"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Register Now</a
+                  >
+                </li>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Text -->
+      <div class="mx-auto mt-10 md:mt-[-5vh] mb-5 flex flex-col text-center">
+        <div class="text-teal-400">© R-NPSMUN Inc. All rights reserved.</div>
+        <div class="name tracking-[1px] mt-3">
+          Made by Vrishank R, Shrivardhan C, Athreya S
+        </div>
+      </div>
+    </footer>
+ <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const containers = document.querySelectorAll("[data-expandable]");
+
+      function setExpandedState(container, isExpanded) {
+        const readMoreBtn = container.querySelector(".read-more");
+        const fullText = container.querySelector(".full-text");
+        const cancelBtn = container.querySelector(".cancel-btn");
+
+        if (isExpanded) {
+          container.classList.add("expanded");
+          fullText.classList.add("visible");
+          readMoreBtn.classList.add("hidden");
+          cancelBtn.style.display = "block";
+
+          readMoreBtn.setAttribute("aria-expanded", "true");
+          cancelBtn.setAttribute("aria-expanded", "true");
+          fullText.setAttribute("aria-hidden", "false");
+        } else {
+          container.classList.remove("expanded");
+          fullText.classList.remove("visible");
+          readMoreBtn.classList.remove("hidden");
+          cancelBtn.style.display = "none";
+
+          readMoreBtn.setAttribute("aria-expanded", "false");
+          cancelBtn.setAttribute("aria-expanded", "false");
+          fullText.setAttribute("aria-hidden", "true");
+        }
+      }
+
+      function checkScreenWidth() {
+        containers.forEach((container) => {
+          if (window.innerWidth < 1200) {
+            setExpandedState(container, true);
+          } else {
+            setExpandedState(container, false);
+          }
+        });
+      }
+
+      containers.forEach((container) => {
+        const readMoreBtn = container.querySelector(".read-more");
+        const cancelBtn = container.querySelector(".cancel-btn");
+
+        readMoreBtn.addEventListener("click", () => setExpandedState(container, true));
+        cancelBtn.addEventListener("click", () => setExpandedState(container, false));
+      });
+
+      window.addEventListener("resize", checkScreenWidth);
+      checkScreenWidth();
+    });
+  </script></body>
+<script>
+  const headers1 = ["Inaugural", "Session 1", "Break", "Session 2", "Lunch", "Session 3"]
+  const bodies1 = ["Welcome to the event! This is the inaugural session to kick things off.", "Topic-based interactive session with key speakers", 
+    "Take a short break, grab some coffee or stretch", "Deep-dive into specific subjects with panels", "Refuel and connect over lunch", 
+    "Final session of the day with Q&A"]
+  const times1 = ["8:30 - 8:50", "9:00 - 10:15", "10:15 - 10:30", "10:30 - 12:30", "12:30 - 1:00", "1:00 - 2:45"]
+
+  const numbers = ["1", "2", "3", "4", "5", "6"]
+
+  const headers2 = ["Session 4", "Break", "Session 5", "Lunch", "Session 6", "Closing Ceremony"]
+  const bodies2 = ["We restart the mun on Day 02 with the 4th session!", "Take a second to rethink your line of approach", 
+    "Fresh minds make better arguments! Give session 05 your best", "Dont forget to get in those calories", "Finish Strong, or you will never get another chance", 
+    "We wind up through a fun closing ceremony. Goodbye!"]
+  const times2 = ["8:15 - 10:15", "10:15 - 10:30", "10:30 - 12:00", "12:00 - 12:30", "12:30 - 1:45", "1:45 - 2:45"]
+  
+  isMobile = window.innerWidth <= 768;
+
+  
+  if (isMobile){
+      header1 = document.getElementById("title1m")
+      time1 = document.getElementById("time1m")
+      des1 = document.getElementById("des1m")
+      number1 = document.getElementById("number1m")
+      
+      header2 = document.getElementById("title2m")
+      time2 = document.getElementById("time2m")
+      des2 = document.getElementById("des2m")
+      number2 = document.getElementById("number2m")
+  }
+  else{
+      header1 = document.getElementById("title1")
+      time1 = document.getElementById("time1")
+      des1 = document.getElementById("des1")
+      number1 = document.getElementById("number1")
+      
+      header2 = document.getElementById("title2")
+      time2 = document.getElementById("time2")
+      des2 = document.getElementById("des2")
+      number2 = document.getElementById("number2")
+    
+  }
+
+  currIndexNumber1 = 0
+  currIndexNumber2 = 0
+  console.log(currIndexNumber1)
+
+  function nextStep1() {
+    console.log(currIndexNumber1)
+    if (currIndexNumber1 != 5){
+      currIndexNumber1 += 1
+      gsap.to(".fade1", {
+        opacity: 0,
+        duration : 0.7, 
+        ease: "power2.out",
+        x: 0,
+
+      })
+      if (!isMobile) {
+        l = document.getElementById("bgdot" + currIndexNumber1).getBoundingClientRect().x;
+        minus = document.getElementById("bgdot0").getBoundingClientRect().x;
+        
+        gsap.to('#dot1', {
+          x: l-minus, ease: "power3.Out", duration: 1
+        })
+    }
+      des1.innerText = bodies1[currIndexNumber1]
+      header1.innerText = headers1[currIndexNumber1]
+      time1.innerText = times1[currIndexNumber1]
+      number1.innerText = numbers[currIndexNumber1] + " of 6"
+      
+      gsap.fromTo(".fade1", {
+        opacity: 0, x:10}, 
+      {opacity: 1, duration : 0.7, x: 0,
+        ease: "power2.out"}
+    )
+      
+      
+    }
+  }
+
+  function prevStep1() {
+    if (0 != currIndexNumber1){
+      currIndexNumber1 -= 1
+      gsap.to(".fade1", {
+        opacity: 0,
+        duration : 0.7, 
+        ease: "power2.out",
+        x: 10,
+
+      })
+      if (!isMobile){
+        l = document.getElementById("bgdot" + currIndexNumber1).getBoundingClientRect().x;
+        minus = document.getElementById("bgdot0").getBoundingClientRect().x;
+        
+        gsap.to('#dot1', {
+          x: l-minus, ease: "power3.out", duration: 1
+        })
+    }
+      des1.innerText = bodies1[currIndexNumber1]
+      header1.innerText = headers1[currIndexNumber1]
+      time1.innerText = times1[currIndexNumber1]
+      number1.innerText = numbers[currIndexNumber1] + " of 6"
+
+      
+      gsap.fromTo(".fade1", {
+        opacity: 0, x:-10}, 
+      {opacity: 1, duration : 0.7, x: 0,
+        ease: "power2.out"}
+    )
+    }
+    }
+
+
+    
+  function nextStep2() {
+    console.log(currIndexNumber2)
+    if (currIndexNumber2 != 5){
+      currIndexNumber2 += 1
+      gsap.to(".fade2", {
+        opacity: 0,
+        duration : 0.7, 
+        ease: "power2.out",
+        x: -10,
+
+
+      })
+      
+      if (!isMobile){
+        l = document.getElementById("bgdot" + currIndexNumber2).getBoundingClientRect().x;
+        minus = document.getElementById("bgdot0").getBoundingClientRect().x;
+
+        gsap.to('#dot2', {
+          x: l-minus, ease: "power.inOut", duration: 0.7
+        })
+    }
+
+      des2.innerText = bodies2[currIndexNumber2]
+      header2.innerText = headers2[currIndexNumber2]
+      time2.innerText = times2[currIndexNumber2]
+      number2.innerText = numbers[currIndexNumber2] + " of 6"
+
+      
+      gsap.fromTo(".fade2", {
+        opacity: 0, x:10}, 
+      {opacity: 1, duration : 0.7, x: 0,
+        ease: "power2.out"}
+    )
+      
+      
+    }
+  }
+
+  function prevStep2() {
+    if (0 != currIndexNumber2){
+      console.log(currIndexNumber2)
+      currIndexNumber2 -= 1
+      gsap.to(".fade2", {
+        opacity: 0,
+        duration : 0.7, 
+        ease: "power2.out",
+        x: 10,
+
+      })
+      
+      if (!isMobile){
+      l = document.getElementById("bgdot" + currIndexNumber2).getBoundingClientRect().x;
+      minus = document.getElementById("bgdot0").getBoundingClientRect().x;
+
+      gsap.to('#dot2', {
+        x: l-minus, ease: "power.inOut", duration: 0.7
+      })
+    }
+
+      des2.innerText = bodies2[currIndexNumber2]
+      header2.innerText = headers2[currIndexNumber2]
+      time2.innerText = times2[currIndexNumber2]
+      number2.innerText = numbers[currIndexNumber2] + " of 6"
+
+      
+      gsap.fromTo(".fade2", {
+        opacity: 0, x:-10}, 
+      {opacity: 1, duration : 0.7, x: 0,
+        ease: "power2.out"}
+    )
+    }
+    }
+
+
+</script>
+<script>
+  
+  const isMobile = window.innerWidth <= 768;
+  clicked = false;
+if (isMobile){
+      // linky = document.getElementById("link").getBoundingClientRect().bottom + window.scrollY
+      // rn = document.getElementById("letters").getBoundingClientRect().top + window.scrollY
+      // console.log(rn)
+      // document.getElementById("letters").style.top = (linky + "100" - rn) + "px"
+    }
+    else{
+    tmain = gsap.timeline({ delay: 1, defaults: {ease: "power4.out"}})
+    tmain.to("#day", {
+        y : +0,
+        duration: 0.75,
+        x: 0,
+    }).to( "#hour", {
+        y : +0,
+        duration: 0.75,
+        x: 0,
+    }, "-=0.6").to( "#min", {
+        y : +0,
+        duration: 0.75,
+        x: 0,
+    }, "-=0.6").to( "#sec", {
+        y : +0,
+        duration: 0.75,
+        x: 0,
+    } , "-=0.6"
+    ).to("#to", {
+        x: -280,
+        opacity: 1,
+        ease: "power3.out"
+    }, ).to("#mun", {
+        x: "-=65",
+        opacity: 1,
+        ease: "power3.out"
+    }, ).to(".date", {
+        opacity: 1,
+        x: +50,
+        duration: 0.5
+    }).to(".links", {
+        opacity: 1,
+        x: +0,
+        duration: 0.5
+    })
+    }
+
+  window.addEventListener("resize", () => {
+    const isMobile = window.innerWidth <= 768;
+
+    if (window.innerWidth <= 768) {
+      [
+        "#hour",
+        "#day",
+        "#sec",
+        "#min",
+        "#to",
+        "#mun",
+        ".date",
+        ".links",
+      ].forEach((item) => {
+        gsap.set(item, { clearProps: "all" });
+      });
+    }
+  });
+    const MainDay = new Date('2025-07-03T08:15:00');
+    const Today = Date.now();
+    diff = Math.round((MainDay-Today)/1000);
+
+    if (diff >= 0){
+        secs = diff % 60;
+        diff = Math.round(diff/60)
+
+        mins = diff % 60;
+        diff = Math.round(diff/60)
+
+        hours = diff % (24);
+        diff = Math.round(diff/24)
+
+        days = diff 
+    }
+    else{
+        secs = 0
+        mins = 0
+        hours = 0
+        days = 0
+    }
+
+    document.getElementById("days").innerText = document.getElementById("days").innerText +  days
+    document.getElementById("hours").innerText = document.getElementById("hours").innerText + hours
+    document.getElementById("mins").innerText = document.getElementById("mins").innerText + mins
+    document.getElementById("secs").innerText =document.getElementById("secs").innerText +  secs
+    
+</script>
+<style>
+
+body{
+            background: radial-gradient(#0C1226 ,  #161D3A);
+}
+      
+.strip {
+        
+        filter: blur( 100px );
+        /* -webkit-backdrop-filter: blur( 60px ); */
+        }
+        
+    ul *{
+        font-weight: 200 !important;
+        color: white !important
+    }
+
+    .glass{
+        background: rgba(39, 39, 39, 0.1);
+        box-shadow: 0 0 200px rgba(0, 0, 0, 0.7),
+        inset 0 0 100px rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur( 60px );
+    -webkit-backdrop-filter: blur( 60px );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    /* background-color: gray; */
+    }
+    .font {
+  font-family: "Rozha One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+      .name {
+        font-family: "Bungee Spice", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+    .date{
+        
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+
+}
+
+
+</style>
+<script>
+  AOS.init();
+</script>
+</html>
