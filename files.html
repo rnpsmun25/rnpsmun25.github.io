@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <title>RNPSMUN | Files</title>
+  <style>
+    .strip { filter: blur(100px); }
+    @keyframes fround1 {
+      0% { transform: translateX(0px) translateY(0px); }
+      25% { transform: translateX(20px) translateY(-10px); }
+      50% { transform: translateX(0px) translateY(-20px); }
+      75% { transform: translateX(-20px) translateY(-10px); }
+      100% { transform: translateX(0px) translateY(0px); }
+    }
+    .grad { background: radial-gradient(#0C1226, #161D3A); }
+    .fround { animation: fround1 10s infinite ease-in-out; }
+    .glassy {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(1.5px);
+      -webkit-backdrop-filter: blur(1.5px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+  </style>
+    <script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("main").style.display="none";
+
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+    document.getElementById("main").style.display="block";
+}
+</script>
+</head>
+<body class="text-center text-white grad overflow-x-hidden">
+<div class="strip w-[200vw] h-72 bg-[#322996bd] fixed top-25 translate-x-[-1400px] -rotate-45 z-[-1]"></div>
+<div class="strip w-[200vw] h-72 bg-[#322996bd] fixed top-50 translate-x-[-550px] -rotate-45 z-[-1]"></div>
+<div class="strip w-[360vw] h-72 bg-[#322996bd] fixed top-50 -translate-x-[700px] -rotate-45 z-[-1]"></div>
+
+    <ul
+      id="nav"
+      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50 hidden md:flex"
+    >
+      <!-- Left side of the navbar -->
+      <li class="float-left">
+        <a
+          href="landing.html"
+          class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+          >RNPSMUN</a
+        >
+      </li>
+
+      <!-- Centered nav items -->
+      <div
+        class="topnav-centered absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm space-x-3"
+      >
+        <li class="inline-block">
+          <a
+            href="people.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Secretariat</a
+          >
+        </li>
+        <li class="inline-block">
+          <a
+            href="commitee.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Committees</a
+          >
+        </li>
+        <li class="inline-block">
+          <a
+            href="files.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Guide</a
+          >
+        </li>
+        <li class="inline-block">
+          <a
+            href="contactus.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Contact</a
+          >
+        </li>
+      </div>
+
+      <!-- Right side of the navbar -->
+      <div class="topnav-right pr-9">
+        <li class="float-right inline-block">
+          <a
+            href="#"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline hover:font-bold hover:text-gray-300 font-bold transition-all duration-100 ease-in-out"
+            >Register</a
+          >
+        </li>
+      </div>
+    </ul>
+    <div id="mySidebar" class="sidebar block lg:hidden z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#000] pt-[60px] backdrop-filter backdrop-blur-2xl bg-opacity-50 transition-all duration-500">
+  <a href="javascript:void(0)" class="closebtn absolute top-0 right-[25px] text-[#fff] text-[10vw] ml-[50px]" onclick="closeNav()">×</a>
+ 
+    <a href="landing.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">RNPSMUN</a>
+    <a href="people.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Secretariat</a>
+    <a href="commitee.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Committees</a>
+    <a href="files.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Guide</a>
+    <a href="contactus.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Contact</a>
+    <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Register</a>
+  </div>
+
+<div id="main" class="block md:hidden z-50 transition-all duration-500 p-4">
+  <button 
+    onclick="openNav()" 
+    class="fixed top-4 left-4 z-50 text-[7vw] text-white px-[5.405vw] py-[4.324vw] rounded-[70px] 
+          backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-lg">
+    ☰
+  </button>
+
+  <h2></h2>
+  <p></p>
+</div>
+
+<div class="absolute top-[10vh] right-[10vw] w-56 h-56 bg-[#1A73E8] opacity-50 rounded-full blur-3xl -z-10 fround"></div>
+<div class="absolute top-[40vh] right-[20vw] w-56 h-56 bg-[#BF3FFF] opacity-50 rounded-full blur-3xl -z-10 fround"></div>
+<div class="absolute top-[50vh] right-[10vw] w-48 h-48 bg-[#2BD4A9] opacity-50 rounded-full blur-3xl -z-10 fround"></div>
+
+<section class="flex flex-col md:flex-row w-full min-h-[70vh] border-b-[1px] border-gray-800 px-6 md:px-16 py-8">
+  <div class="w-full md:w-1/2 flex flex-col justify-center">
+    <div class="flex flex-col gap-10">
+      <h2 class="text-[38px] md:text-[50px] font-bold text-left md:pl-[4vw]">Delegate Materials</h2>
+      <p class="text-left text-gray-400 md:pl-[6vw]">
+        Click <a class="hover:text-blue-700 underline decoration-dotted" href="https://google.com">here</a> to access matrices for RNPSMUN Committees <br>
+        Click <a class="hover:text-blue-700 underline decoration-dotted" href="https://google.com">here</a> to access background guides for RNPSMUN Committees <br>
+        For more details scroll below
+      </p>
+    </div>
+  </div>
+  <div class="w-full md:w-1/2 hidden md:block">
+    <img src="/static/pdf.png" alt="pdf-graphic" class="scale-[0.7] mt-[40px] ml-[5vw]" />
+  </div>
+</section>
+
+<section class="w-full min-h-[70vh] flex flex-wrap justify-center items-center p-6 md:p-16 gap-8 md:gap-16">
+  <!-- Card Template -->
+  <div data-aos="fade-up" data-aos-duration="1000" class="relative flex flex-col rounded-[20px] max-w-[300px] w-full glassy bg-clip-border shadow-3xl text-white p-4">
+    <div class="w-full">
+      <img src="/static/UNSC.png" class="mb-3 w-full rounded-xl" alt="">
+      <div class="mb-3">
+        <p class="text-lg font-bold text-navy-700">Code of Conduct</p>
+      </div>
+      <div>
+        <button class="text-sm font-bold rounded-md w-full h-[5vh] bg-[#2BD4A9] text-slate-900">
+          <i class="fa-regular fa-arrow-down-to-line"></i> Download Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250" class="relative flex flex-col rounded-[20px] max-w-[300px] w-full glassy bg-clip-border shadow-3xl text-white p-4">
+    <div class="w-full">
+      <img src="/static/UNSC.png" class="mb-3 w-full rounded-xl" alt="">
+      <div class="mb-3">
+        <p class="text-lg font-bold text-navy-700">Rules of Procedure</p>
+      </div>
+      <div>
+        <button class="text-sm font-bold rounded-md w-full h-[5vh] bg-[#2BD4A9] text-slate-900">
+          <i class="fa-regular fa-arrow-down-to-line"></i> Download Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" class="relative flex flex-col rounded-[20px] max-w-[300px] w-full glassy bg-clip-border shadow-3xl text-white p-4">
+    <div class="w-full">
+      <img src="/static/UNSC.png" class="mb-3 w-full rounded-xl" alt="">
+      <div class="mb-3">
+        <p class="text-lg font-bold text-navy-700">Delegate Resources</p>
+      </div>
+      <div>
+        <button class="text-sm font-bold rounded-md w-full h-[5vh] bg-[#2BD4A9] text-slate-900">
+          <i class="fa-regular fa-arrow-down-to-line"></i> Download Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="750" class="relative flex flex-col rounded-[20px] max-w-[300px] w-full glassy bg-clip-border shadow-3xl text-white p-4">
+    <div class="w-full">
+      <img src="/static/UNSC.png" class="mb-3 w-full rounded-xl" alt="">
+      <div class="mb-3">
+        <p class="text-lg font-bold text-navy-700">Event Schedule</p>
+      </div>
+      <div>
+        <button class="text-sm font-bold rounded-md w-full h-[5vh] bg-[#2BD4A9] text-slate-900">
+          <i class="fa-regular fa-arrow-down-to-line"></i> Download Now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  AOS.init();
+</script>
+<footer
+class="w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font h"
+>
+<div
+  class="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
+>
+  <div
+    class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh]"
+  >
+    <div class="w-36 h-36 mt-[1.2rem]">
+      <img class="w-96 object-cover scale-[]" src="/static/nps.png" />
+    </div>
+    <div class="ml-2 mt-4">
+      <span
+        class="flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start gap-6"
+      >
+        <a
+          href="tel:08023350361"
+          class="text-white cursor-pointer hover:text-[#169948] transition-all"
+        >
+          <i
+            class="fa-thin font-semilight fa-circle-phone scale-[1.2]"
+          ></i>
+        </a>
+        <a
+          href="mailto:rnpsmun24@gmail.com"
+          class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
+        >
+          <i class="fa-thin font-semilight fa-envelope scale-[1.2]"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/rnpsmun2023/"
+          class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
+        >
+          <i class="fa-brands opacity-[0.7] fa-instagram scale-[1.2]"></i>
+        </a>
+      </span>
+    </div>
+  </div>
+  <div
+    class="flex flex-wrap flex-grow justify-between mt-10 -mb-20 text-center md:pl-20 md:mt-0 md:text-left"
+  >
+    <div class="w-full px-4 lg:w-1/4 md:w-1/2 h-[10vh]">
+      <h2 class="text-[#169948] font-bold uppercase">About</h2>
+      <nav class="mb-10 list-none">
+        <li class="mt-3">
+          <a
+            href="people.html"
+            class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+            >Secretariat</a
+          >
+        </li>
+        <li class="mt-3">
+          <a
+            href="commitee.html"
+            class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+            >Committees</a
+          >
+        </li>
+      </nav>
+    </div>
+    <div class="w-full px-4 lg:w-1/4 md:w-1/2">
+      <h2 class="text-[#169948] font-bold uppercase">Resources</h2>
+      <nav class="mb-10 list-none">
+        <li class="mt-3">
+          <a
+            href="contactus.html"
+            class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+            >Contact Us</a
+          >
+        </li>
+        <li class="mt-3">
+          <a
+            href="files.html"
+            class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+            >Guide</a
+          >
+        </li>
+      </nav>
+    </div>
+    <div class="w-full px-4 lg:w-1/4 md:w-1/2">
+      <h2 class="text-[#169948] font-bold uppercase">Contact</h2>
+      <nav class="mb-10 list-none">
+        <li class="mt-3">
+          <a
+            href="mailto:rnpsmun24@gmail.com"
+            class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+            >Send a Message</a
+          >
+        </li>
+        <li class="mt-3">
+          <a
+            href="registerparthere"
+            class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+            >Register Now</a
+          >
+        </li>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <div class="mx-auto -mt-20 mb-5 flex flex-col text-center">
+    <div class="text-teal-400">© R-NPSMUN Inc. All rights reserved.</div>
+    <div class="name tracking-[1px] mt-3">
+      Made by Vrishank R, Shrivardhan C, Athreya S
+    </div>
+</div>
+</footer>
+</body>
+</html>
