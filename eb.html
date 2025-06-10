@@ -1,1 +1,757 @@
+<html>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link src="https://cdn.tailwindcss.com"></link>
+  <!-- Link to Tailwind CDN -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.g/static.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
+.name{
+  font-family: "Bungee Spice", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+  .strip {
+    filter: blur(100px);
+    max-width: 100vw;
+    /* -webkit-backdrop-filter: blur( 60px ); */
+  }
+    body {
+      user-select: none;
+      min-height: 100vh;
+      overscroll-behavior: none;
+      background: radial-gradient(#0c1226, #161d3a);
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      text-align: center;
+
+      padding: 0;
+    }
+
+    .js-tilt-glare {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      border-radius: inherit;
+    }
+
+    .js-tilt-glare-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      pointer-events: none;
+      background: rgba(255, 255, 255, 0.4);
+      width: 200%;
+      height: 200%;
+      transform: rotate(180deg) translate(-50%, -50%);
+      transform-origin: 0% 0%;
+      opacity: 0;
+    }
+
+    .container {
+      padding: 5.359vw;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      align-items: start;
+      column-gap: 8.039vw;
+      justify-self: center;
+      justify-content: center;
+      margin: 0;
+      row-gap: 8.039vw;
+    }
+       @media only screen and (max-width: 1024px){
+      .container{
+        grid-template-columns: auto;
+        row-gap:7vw;
+        align-items: center;
+        padding:1vw;
+
+        justify-self:center;
+        column-gap:7vw;
+        
+      }
+    }
+    .box {
+      position: relative;
+      border-radius: 70px;
+      transform-style: preserve-3d;
+
+      z-index: 1;
+    }
+       @media only screen and (max-width: 1200px){
+      .box{
+        justify-content: center;
+      }
+    }
+    .box .card {
+      position: relative;
+      background: rgba(212, 212, 212, 0.1);
+      width: 19vw;
+      min-height: 24.116vw;
+      backdrop-filter: blur(7px);
+      border: 0.5px solid rgba(255, 255, 255, 0.15);
+      border-radius: 70px;
+      box-shadow: 0 2.412vw 5.091vw rgba(0, 0, 0, 0.4);
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: 0.536vw;
+    }
+     @media only screen and (max-width: 1200px){
+      .box .card{
+        width: 80vw;
+        min-height: 60vw;
+        justify-self:center;
+        justify-items: center;
+        
+      }
+    }
+
+    .box .card .elements {
+      position: absolute;
+      justify-self: center;
+      justify-content: center;
+      width: 16.077vw;
+      height: auto;
+      border-radius: 5p70pxx;
+      text-align: center;
+      background: transparent;
+      z-index: 2;
+      transform: translateY(50px);
+      align-items: center;
+      transition: all 0.63s ease;
+    }
+         @media only screen and (max-width: 1200px){
+      .box .card .elements{
+        width: 70vw;
+        margin:0;
+        transform:translateY(0px);
+        justify-self:center;
+        justify-content: center;
+        margin: auto
+        
+      }
+    }
+    .box .card .elements h2 {
+      font-size: 1.34vw;
+      font-weight: 600;
+      color: #c9c9c9;
+      text-transform: uppercase;
+    }
+         @media only screen and (max-width: 1200px){
+      .box .card .elements{
+        width: 70vw;
+        margin:auto;
+        transform:translateY(0px);
+        justify-self:center;
+        
+      }
+    }
+    .box .card .elements p {
+      font-size: 1.5rem;
+      color: #2bd4a9;
+    }
+      @media only screen and (max-width: 1200px){
+      .box .card .elements h2{
+        font-size:6vw;
+        
+      }
+    }
+       @media only screen and (max-width: 1200px){
+      .box .card .elements p{
+        font-size:2.2rem;
+        
+      }
+    }
+    .box .card .elements .a1 {
+      font-size: 21px;
+      color: #2bd4a9;
+      overflow: hidden;
+      opacity: 0;
+      padding: 2.68vw;
+      bottom: 0vw;
+    }
+@media only screen and (max-width: 1200px){
+      .box .card .elements .a1{
+        font-size:4vw;
+        bottom:1.608vw;
+        opacity: 1;
+      }
+    }
+    .box .card .elements .iamge {
+      object-fit: cover;
+      padding: 1.608vw;
+      justify-self: center;
+      align-content: center;
+    }
+ 
+    .box .card:hover .elements {
+      transform: translateY(1.072vw);
+      transition: 0.5s;
+      transition-timing-function: ease;
+    }
+    @media only screen and (max-width: 1200px){
+      .box .card:hover .elements{
+        transition: none;
+        transform: none;
+        
+      }
+    }
+
+    .box .card:hover .elements .a1 {
+      transform: translateY(-1.608vw);
+      padding: 3.215vw;
+      transition: 0.5s;
+      transition-timing-function: ease;
+      opacity: 1;
+    }
+     @media only screen and (max-width: 1200px){
+      .box .card:hover .elements .a1{
+        transition: none;
+        transform: none;
+        padding:2.68vw;
+      }
+    }
+
+    .box .card .elements .iamge img {
+      border-radius: 50%;
+      border: 1px solid #2d2d2d;
+      width: 10.718vw;
+      height: 10.718vw;
+      justify-self: center;
+    }
+       @media only screen and (max-width: 1200px){
+      .box .card .elements .iamge img{
+        width: 30vw;
+        height: 30vw;
+        
+      }
+    }
+    ul * {
+      color: white;
+      font-weight: 200 !important;
+    }
+  </style>
+ <style>
+      @keyframes fadeSlideIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-20%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-slide-in {
+        animation: fadeSlideIn 1s ease-out forwards;
+      }
+    </style>
+</head>
+<body>
+  <script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("main").style.display="none";
+
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+    document.getElementById("main").style.display="block";
+}
+</script>
+
+
+  <body class="overflow-x-hidden">
+    <div
+      class="strip w-[0vw] lg:w-[200vw] h-72 bg-[#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"
+    ></div>
+    <div
+      class="strip w-[0vw] lg:w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-550px] -rotate-45 z-[-1]"
+    ></div>
+    <div
+      class="strip w-[0vw] lg:w-[360vw] h-72 bg-[#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"
+    ></div>
+    <div
+      class="strip w-[0vw] lg:w-[275px] aspect-square bg-[#322996] absolute top-[230vh] left-[50vw] rounded-full z-[-1]"
+    ></div>
+    <div
+      class="strip w-[0vw] lg:w-[275px] aspect-square bg-[#322996] absolute top-[260vh] left-[20vw] rounded-full z-[-1]"
+    ></div>
+    <div
+      class="strip w-[0vw] lg:w-[275px] aspect-square bg-[#322996] absolute top-[260vh] left-[100vw] rounded-full z-[-1]"
+    ></div>
+
+    <ul
+      id="nav"
+      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50 hidden lg:flex"
+    >
+      <!-- Left side of the navbar -->
+      <li class="float-left">
+        <a
+          href="landing.html"
+          class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+          >RNPSMUN</a
+        >
+      </li>
+
+      <!-- Centered nav items -->
+      <div
+        class="topnav-centered absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm space-x-3"
+      >
+        <li class="inline-block">
+          <a
+            href="people.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Secretariat</a
+          >
+        </li>
+        <li class="inline-block">
+          <a
+            href="commitee.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Committees</a
+          >
+        </li>
+        <li class="inline-block">
+          <a
+            href="files.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Guide</a
+          >
+        </li>
+        <li class="inline-block">
+          <a
+            href="contactus.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Contact</a
+          >
+        </li>
+      </div>
+
+      <!-- Right side of the navbar -->
+      <div class="topnav-right pr-9">
+        <li class="float-right inline-block">
+          <a
+            href="#"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline hover:font-bold hover:text-gray-300 font-bold transition-all duration-100 ease-in-out"
+            >Register</a
+          >
+        </li>
+      </div>
+    </ul>
+    <div id="mySidebar" class="sidebar block lg:hidden z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#000] pt-[60px] backdrop-filter backdrop-blur-2xl bg-opacity-50 transition-all duration-500">
+  <a href="javascript:void(0)" class="closebtn absolute top-0 right-[25px] text-[#fff] text-[10vw] ml-[50px]" onclick="closeNav()">×</a>
+ 
+    <a href="landing.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">RNPSMUN</a>
+    <a href="people.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Secretariat</a>
+    <a href="commitee.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Committees</a>
+    <a href="files.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Guide</a>
+    <a href="contactus.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Contact</a>
+    <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Register</a>
+  </div>
+
+<div id="main" class="block lg:hidden z-50 transition-all duration-500 p-4">
+  <button 
+    onclick="openNav()" 
+    class="fixed top-4 left-4 z-50 text-[7vw] text-white px-[5.405vw] py-[4.324vw] rounded-[70px] 
+          backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-lg">
+    ☰
+  </button>
+
+  <h2></h2>
+  <p></p>
+</div>
+ <div id="viewOnBigDisp" class="flex items-center justify-between px-4 w-screen h-[5vh]  text-white text-[3vw] text-center lg:hidden z-50 absolute top-0 bg-black bg-opacity-30 backdrop-blur-2xl fade-slide-in">
+      <span class="w-full text-center">BEST VIEWED ON LARGE DISPLAYS</span>
+  <button 
+  onclick="document.getElementById('viewOnBigDisp').style.display='none'" 
+  class="ml-4 flex items-center justify-center rounded-full bg-gray-700 text-white text-[4vw] leading-none hover:bg-red-500 transition duration-200"
+  style="width: 5vw; height: 5vw;">
+  &times;
+</button>
+</div>
+    <div class="container">
+      <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="../static/amog.jpeg" alt="Avatar" />
+            </div>
+            <h2>Amogh Prakash</h2>
+            <div class="a1">DISEC Chair</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="../static/saqe.jpeg" alt="Avatar" />
+            </div>
+            <h2>Saqeeb Chand</h2>
+            <div class="a1">DISEC Moderator</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="../static/ruhi.jpeg" alt="Avatar" />
+            </div>
+            <h2>Ruhi Maroo</h2>
+            <div class="a1">DISEC Moderator</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="../static/nith.jpeg" alt="Avatar" />
+            </div>
+            <h2>Nithya</h2>
+            <div class="a1">UNHRC Co-Chair</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="../static/eva.jpeg" alt="Avatar" />
+            </div>
+            <h2>Eva Rai</h2>
+            <div class="a1">UNHRC Co-Chair</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
+      </div>
+       <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="../static/adityav.jpeg" alt="Avatar" />
+            </div>
+            <h2>Aditya Vasista</h2>
+            <div class="a1">UNHRC Vice-Chair</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
+      </div>
+      
+     <div class="box">
+      <div class="card">
+        <div class="elements">
+          <div class="iamge">
+            <img src="../static/avne.jpeg" alt="Avatar" />
+          </div>
+          <h2>Avnee Savanur</h2>
+          <div class="a1">UNSC Co-Chair</div>
+        </div>
+        <div class="js-tilt-glare">
+          <div class="js-tilt-glare-inner"></div>
+        </div>
+      </div>
+    </div>
+      <div class="box">
+       <div class="card">
+         <div class="elements">
+           <div class="iamge">
+             <img src="../static/naman.jpeg" alt="Avatar" />
+           </div>
+           <h2>Naman Hegde</h2>
+           <div class="a1">UNSC Co-Chair</div>
+         </div>
+         <div class="js-tilt-glare">
+           <div class="js-tilt-glare-inner"></div>
+         </div>
+       </div>
+     </div>
+       <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="../static/samit.jpeg" alt="Avatar" />
+            </div>
+            <h2>Samit Chakraborty</h2>
+            <div class="a1">UNSC Co-Vice-Chair</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
+      </div>
+       <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="../static/gaur.jpeg" alt="Avatar" />
+            </div>
+            <h2>Gaurang Sinha</h2>
+            <div class="a1">CCC Chair</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
+      </div>
+       <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="../static/mrud.jpeg" alt="Avatar" />
+            </div>
+            <h2>Mrudubhashini MT</h2>
+            <div class="a1">CCC Vice-Chair</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
+      </div>
+       <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="../static/haari.jpeg" alt="Avatar" />
+            </div>
+            <h2>Haarika M</h2>
+            <div class="a1">CCC Moderator</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="../static/vija.jpeg" alt="Avatar" />
+            </div>
+            <h2>Vijaya Sengar</h2>
+            <div class="a1">Head of Press</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+   <footer
+      class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font"
+    >
+      <div
+        class="flex flex-col flex-wrap items-center px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
+      >
+        <!-- Logo and Icons -->
+        <div
+          class="flex flex-col w-full md:w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh] items-center mb-10 md:mb-0"
+        >
+          <div class="w-36 h-36 mt-[1.2rem]">
+            <img class="w-96 object-cover" src="../static/nps.png" />
+          </div>
+          <div class="ml-2 mt-4">
+            <span
+              class="flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start gap-6"
+            >
+              <a
+                href="tel:08023350361"
+                class="text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i
+                  class="fa-thin font-semilight fa-circle-phone scale-[1.2]"
+                ></i>
+              </a>
+              <a
+                href="mailto:rnpsmun24@gmail.com"
+                class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i class="fa-thin font-semilight fa-envelope scale-[1.2]"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/rnpsmun2023/"
+                class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i class="fa-brands opacity-[0.7] fa-instagram scale-[1.2]"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <!-- Link Sections -->
+        <div
+          class="flex flex-col md:flex-row flex-grow w-full md:w-auto justify-center md:justify-between text-center md:pl-20 md:mt-0 md:text-left gap-8 md:gap-0"
+        >
+          <!-- About -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                About
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="people.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Secretariat</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="commitee.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Committees</a
+                  >
+                </li>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Resources -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                Resources
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="contactus.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Contact Us</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="files.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Guide</a
+                  >
+                </li>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                Contact
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="mailto:rnpsmun24@gmail.com"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Send a Message</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="registerparthere"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Register Now</a
+                  >
+                </li>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Text -->
+      <div class="mx-auto mt-10 md:mt-[-5vh] mb-5 flex flex-col text-center">
+        <div class="text-teal-400">© R-NPSMUN Inc. All rights reserved.</div>
+        <div class="name tracking-[1px] mt-3">
+          Made by Vrishank R, Shrivardhan C, Athreya S
+        </div>
+      </div>
+    </footer>
+  </body>
+ <script>
+  function initTiltIfWideEnough() {
+    if (window.innerWidth >= 1024) {
+      VanillaTilt.init(document.querySelectorAll(".box"), {
+        max: 10,
+        speed: 180,
+        easing: "cubic-bezier(.03,.98,.52,.99)",
+        reverse: true,
+        glare: true,
+        "max-glare": 0.1,
+        "glare-prerender": true
+      });
+    }
+  }
+
+  initTiltIfWideEnough();
+
+  // Optional: re-check on window resize
+  window.addEventListener('resize', () => {
+    // Only init once (you may want to avoid reinitializing repeatedly)
+    if (!document.querySelector(".box").vanillaTilt && window.innerWidth >= 768) {
+      initTiltIfWideEnough();
+    }
+  });
+</script>
+</html>
