@@ -35,25 +35,22 @@
       user-select: none;
       min-height: 100vh;
       overscroll-behavior: none;
-  background: #1f1f1f;
-      background: radial-gradient(#1b405c, #1f1f1f);
-      -webkit-background: radial-gradient(#1b405c, #1f1f1f);
-
-
+      background: #1f1f1f;
+      background: radial-gradient(#1f1f1f, #1b405c);
+      -webkit-background: radial-gradient(#1f1f1f, #1b405c);
       font-family: "Poppins", sans-serif;
       margin: 0;
           text-align: -webkit-center;
 
       padding: 0;
     }
-  @media only screen and (max-width: 1366px){
+@media only screen and (max-width: 1024px){
       body{
         background: rgb(32,32,32);
         -webkit-background: rgb(32,32,32)
         
       }
     }
-
     .js-tilt-glare {
       position: absolute;
       top: 0;
@@ -90,7 +87,7 @@
       margin: 0;
       row-gap: 8.039vw;
     }
-       @media only screen and (max-width: 1366px){
+       @media only screen and (max-width: 1024px){
       .container{
         grid-template-columns: auto;
         row-gap:7vw;
@@ -114,7 +111,7 @@
       margin: 0;
       row-gap: 8.039vw;
     }
-       @media only screen and (max-width: 1366px){
+       @media only screen and (max-width: 1024px){
       .container1{
         grid-template-columns: auto;
         row-gap:7vw;
@@ -133,7 +130,7 @@
 
       z-index: 1;
     }
-       @media only screen and (max-width: 1366px){
+       @media only screen and (max-width: 1200px){
       .box{
         justify-content: center;
       }
@@ -183,7 +180,7 @@
   scrollbar-color: #dca646 #111;        /* Thumb color and track color */
 }
 
-     @media only screen and (max-width: 1366px){
+     @media only screen and (max-width: 1200px){
       .box .card{
         width: 80vw;
         min-height: 60vw;
@@ -207,7 +204,7 @@
       align-items: center;
       transition: all 0.63s ease;
     }
-         @media only screen and (max-width: 1366px){
+         @media only screen and (max-width: 1200px){
       .box .card .elements{
         width: 70vw;
         margin:0;
@@ -224,7 +221,7 @@
       color: #c9c9c9;
       text-transform: uppercase;
     }
-         @media only screen and (max-width: 1366px){
+         @media only screen and (max-width: 1200px){
       .box .card .elements{
         width: 70vw;
         margin:auto;
@@ -237,13 +234,13 @@
       font-size: 1.5rem;
       color: #2bd4a9;
     }
-      @media only screen and (max-width: 1366px){
+      @media only screen and (max-width: 1200px){
       .box .card .elements h2{
         font-size:6vw;
         
       }
     }
-       @media only screen and (max-width: 1366px){
+       @media only screen and (max-width: 1200px){
       .box .card .elements p{
         font-size:2.2rem;
         
@@ -259,7 +256,7 @@
       padding: 2.68vw;
       bottom: 0vw;
     }
-@media only screen and (max-width: 1366px){
+@media only screen and (max-width: 1200px){
       .box .card .elements .a1{
         font-size:4vw;
         bottom:1.608vw;
@@ -279,7 +276,7 @@
       transition: 0.5s;
       transition-timing-function: ease;
     }
-    @media only screen and (max-width: 1366px){
+    @media only screen and (max-width: 1200px){
       .box .card:hover .elements{
         transition: none;
         transform: none;
@@ -297,7 +294,7 @@
       transition-timing-function: ease;
       opacity: 1;
     }
-     @media only screen and (max-width: 1366px){
+     @media only screen and (max-width: 1200px){
       .box .card:hover .elements .a1{
         transition: none;
         transform: none;
@@ -312,7 +309,7 @@
       height: 10.718vw;
       justify-self: -webkit-center;
     }
-       @media only screen and (max-width: 1366px){
+       @media only screen and (max-width: 1200px){
       .box .card .elements .iamge img{
         width: 30vw;
         height: 30vw;
@@ -324,11 +321,6 @@
       font-weight: 200 !important;
       font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     }
-    .strip {
-        
-        filter: blur( 100px );
-        /* -webkit-backdrop-filter: blur( 60px ); */
-        }
   </style>
  <style>
       @keyframes fadeSlideIn {
@@ -365,9 +357,24 @@ function closeNav() {
 
 
   <body class="overflow-x-hidden">
-<div class="strip xl:w-[200vw] h-72 bg-[#001219] [#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"></div>
-<div class="strip xl:w-[200vw] h-72 bg-[#001219] [#322996bd] absolute top-50 translate-x-[-550px] -rotate-45 z-[-1]"></div>
-<div class="strip xl:w-[360vw] h-72 bg-[#001219] [#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"></div>
+<div
+      class="strip w-[0vw] lg:w-[200vw] h-72 bg-[#001219] -[#322996bd] absolute top-[20vh] translate-x-[-1400px] -rotate-45 z-[-1]"
+    ></div>
+    <div
+      class="strip w-[0vw] lg:w-[200vw] h-72 bg-[#001219] -[#322996bd] absolute top-[30vh] translate-x-[-550px] -rotate-45 z-[-1]"
+    ></div>
+    <div
+      class="strip w-[0vw] lg:w-[360vw] h-72 bg-[#001219] -[#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"
+    ></div>
+    <div
+      class="strip w-[0vw] lg:w-[275px] aspect-square bg-[#001219] -[#322996] absolute top-[330vh] left-[20vw] rounded-full z-[-1]"
+    ></div>
+    <div
+      class="strip w-[0vw] lg:w-[275px] aspect-square bg-[#001219] -[#322996] absolute top-[220vh] left-[70vw] rounded-full z-[-1]"
+    ></div>
+    <div
+      class="strip w-[0vw] lg:w-[275px] aspect-square bg-[#001219] -[#322996] absolute top-[320vh] left-[50vw] rounded-full z-[-1]"
+    ></div>
     <ul
       id="nav"
       class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#dca646] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50 hidden lg:flex"
@@ -619,8 +626,6 @@ function closeNav() {
       </div>
     </div>
 
-   
-
    <footer
 class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font"
 >
@@ -772,7 +777,7 @@ class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 bod
   </body>
  <script>
   function initTiltIfWideEnough() {
-    if (window.innerWidth >= 1366) {
+    if (window.innerWidth >= 1024) {
       VanillaTilt.init(document.querySelectorAll(".box"), {
         max: 10,
         speed: 180,
@@ -795,5 +800,4 @@ class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 bod
     }
   });
 </script>
-
 </html>
