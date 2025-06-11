@@ -71,9 +71,6 @@
           transform: translateX(0px) translateY(0px);
         }
       }
-      .grad {
-        background: radial-gradient(#1b405c, #1f1f1f);
-      }
       .fround {
         animation: fround1 10s infinite ease-in-out;
       }
@@ -90,6 +87,11 @@
         color: white !important;
       }
 
+      body {
+        background: #1f1f1f;
+        background: radial-gradient(#1b405c, #1f1f1f);
+        -webkit-background: radial-gradient(#1b405c, #1f1f1f);
+      }
       @media only screen and (max-width: 700px) {
         body {
           background: #1f1f1f;
@@ -110,7 +112,7 @@
       }
     </script>
   </head>
-  <body class="text-center text-white grad overflow-x-hidden">
+  <body class="text-center text-white overflow-x-hidden">
     <ul
       id="nav"
       class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#dca646] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50 hidden lg:flex"
@@ -238,22 +240,22 @@
     </div>
     <section class="h-[200vh] absolute z-[-5] overflow-hidden w-[100%]">
       <div
-        class="strip w-[200vw] h-72 bg-[#001219] fixed top-25 translate-x-[-1400px] -rotate-45 z-[-1]"
+        class="strip md:block hidden w-[200vw] h-72 bg-[#001219] fixed top-25 translate-x-[-1400px] -rotate-45 z-[-1]"
       ></div>
       <div
-        class="strip w-[200vw] h-72 bg-[#001219] fixed top-50 translate-x-[-550px] -rotate-45 z-[-1]"
+        class="strip md:block hidden w-[200vw] h-72 bg-[#001219] fixed top-50 translate-x-[-550px] -rotate-45 z-[-1]"
       ></div>
       <div
-        class="strip w-[360vw] h-72 bg-[#001219] fixed top-50 -translate-x-[700px] -rotate-45 z-[-1]"
+        class="strip md:block hidden w-[360vw] h-72 bg-[#001219] fixed top-50 -translate-x-[700px] -rotate-45 z-[-1]"
       ></div>
       <div
-        class="strip md:w-[275px] aspect-square bg-[#001219] absolute top-[360vh] left-[50vw] rounded-full z-[-1]"
+        class="strip md:block hidden md:w-[275px] aspect-square bg-[#001219] absolute top-[360vh] left-[50vw] rounded-full z-[-1]"
       ></div>
       <div
-        class="strip md:w-[275px] aspect-square bg-[#001219] absolute top-[380vh] left-[20vw] rounded-full z-[-1]"
+        class="strip md:block hidden md:w-[275px] aspect-square bg-[#001219] absolute top-[380vh] left-[20vw] rounded-full z-[-1]"
       ></div>
       <div
-        class="strip md:w-[275px] aspect-square bg-[#001219] absolute top-[380vh] left-[80vw] rounded-full z-[-1]"
+        class="strip md:block hidden md:w-[275px] aspect-square bg-[#001219] absolute top-[380vh] left-[80vw] rounded-full z-[-1]"
       ></div>
     </section>
 
