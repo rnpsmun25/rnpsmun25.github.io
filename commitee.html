@@ -158,7 +158,7 @@
 
     <!-- Main -->
     <div
-      class="relative -mt-20 w-full overflow-x-hidden md:h-[230vh] grid py-[90px] pt-[150px] md:grid-cols-2 gap-y-[max(9.5vw,_50px)] z-[-2] overflow-y-hidden pb-[200px] grid-cols-1"
+      class="relative -mt-20 w-full overflow-x-hidden md:h-[230vh] grid py-[90px] pt-[150px] md:grid-cols-2 gap-y-[max(9.5vw,_30px)] z-[-2] overflow-y-hidden pb-[200px] grid-cols-1"
     >
       <div
         id="card1"
@@ -799,6 +799,11 @@
     }
   }
 
+  @media only screen and (max-width: 700px) {
+    body {
+      background: #1f1f1f;
+    }
+  }
   .fade-slide-in {
     animation: fadeSlideIn 1s ease-out forwards;
   }
