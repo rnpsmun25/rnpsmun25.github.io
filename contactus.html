@@ -114,7 +114,62 @@ x<link rel="preconnect" href="https://fonts.googleapis.com">
         background: radial-gradient(#1b405c, #1f1f1f);
       }
 
-      
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #28282b;
+        opacity: 95;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 21px;
+        color: #a9a9a9;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidebar a:hover {
+        color: #ffffff;
+      }
+
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 15px;
+        opacity: 70%;
+        background-color: #080808;
+        color: #fff;
+        position: fixed;
+        padding: 15px 21px;
+        border: none;
+      }
+
+      .openbtn:hover {
+        background-color: #444;
+      }
+
+      #main {
+        transition: margin-left 0.5s;
+        padding: 16px;
+      }
+
       /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
       @media screen and (max-height: 450px) {
         .sidebar {
@@ -260,7 +315,8 @@ x<link rel="preconnect" href="https://fonts.googleapis.com">
       <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
         >Register</a
       >
-<div id="mySidebar" class="sidebar block lg:hidden z-50 text-center fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#000] pt-[60px] backdrop-filter backdrop-blur-2xl bg-opacity-50 transition-all duration-500">
+    </div>
+ <div id="mySidebar" class="sidebar block lg:hidden z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#000] pt-[60px] backdrop-filter backdrop-blur-2xl bg-opacity-50 transition-all duration-500">
   <a href="javascript:void(0)" class="closebtn absolute top-0 right-[25px] text-[#fff] text-[10vw] ml-[50px]" onclick="closeNav()">×</a>
  
     <a href="index.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">RNPSMUN</a>
@@ -282,6 +338,7 @@ x<link rel="preconnect" href="https://fonts.googleapis.com">
   <h2></h2>
   <p></p>
 </div>
+
     <div
       id="viewOnBigDisp"
       class="flex items-center justify-between px-4 w-screen h-[5vh] text-white text-[3vw] text-center lg:hidden z-50 absolute top-0 bg-black bg-opacity-30 backdrop-blur-2xl fade-slide-in"
