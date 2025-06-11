@@ -15,8 +15,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rozha+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Righteous&family=Rozha+One&display=swap" rel="stylesheet">
   <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "100%";
@@ -106,11 +106,13 @@ function closeNav() {
       align-items: center;
       overflow: hidden;
       transition: width 0.3s ease-in-out, min-height 0.3s ease-in-out, padding 0.3s ease-in-out;
-      background: rgba(212, 212, 212, 0.1);
-      backdrop-filter: blur(7px);
-      border: 0.5px solid rgba(255, 255, 255, 0.15);
+      background: rgba(10, 10, 10, 0.1);
+
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 20px;
-      box-shadow: 0 45px 95px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 2.412vw 5.091vw rgba(0, 0, 0, 0.4);
+
       position: relative;
       padding: 0.5vw 1.5vw;
       box-sizing: border-box;
@@ -320,22 +322,22 @@ function closeNav() {
 <!-- Countdown -->
 <section class="w-[92vw] h-[80vh] bg-black-900">
     <div class="relative md:translate-y-24 md:translate-x-[3vw] md:flex-row flex-col flex items-center gap-[6.5vw]  justify-center">
-    <div id="day" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] md:translate-x-0 translate-x-[-10vw] md:mt-auto mt-[20vh]">
+    <div id="day" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] rounded-[max(2vw,_20px)] md:translate-x-0 translate-x-[-10vw] md:mt-auto mt-[20vh]">
       <p class="text-[#dca646] [#e5ac4b] " id="days"></p>
       <p class="text-[#dca646] [#e5ac4b]  absolute md:bottom-[-3vw] md:right-auto right-[min(-20vw,_-100px)] text-[max(1.2vw,_14px)] font-semibold tracking-[3px]">DAYS</p>
     </div>
     
-    <div id="hour" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] md:translate-x-0 translate-x-[-10vw]">
+    <div id="hour" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] rounded-[max(2vw,_20px)] md:translate-x-0 translate-x-[-10vw]">
       <p class="text-[#dca646] [#e5ac4b] " id="hours"></p>
       <p class="text-[#dca646] [#e5ac4b]  absolute md:bottom-[-3vw] md:right-auto right-[min(-20vw,_-100px)] text-[max(1.2vw,_14px)] font-semibold tracking-[3px]">HOURS</p>
     </div>
     
-    <div id="min" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] md:translate-x-0 translate-x-[-10vw]">
+    <div id="min" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] rounded-[max(2vw,_20px)] md:translate-x-0 translate-x-[-10vw]">
       <p class="text-[#dca646] [#e5ac4b] " id="mins"></p>
       <p class="text-[#dca646] [#e5ac4b]  absolute md:bottom-[-3vw] md:right-auto right-[min(-20vw,_-100px)] text-[max(1.2vw,_14px)] font-semibold tracking-[3px]">MINUTES</p>
     </div>
     
-    <div id="sec" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] md:translate-x-0 translate-x-[-10vw]">
+    <div id="sec" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] rounded-[max(2vw,_20px)] md:translate-x-0 translate-x-[-10vw]">
       <p class="text-[#dca646] [#e5ac4b] " id="secs"></p>
       <p class="text-[#dca646] [#e5ac4b]  absolute md:bottom-[-3vw] md:right-auto right-[min(-20vw,_-100px)] text-[max(1.2vw,_14px)] font-semibold tracking-[3px]">SECONDS</p>
     </div>
@@ -370,6 +372,8 @@ function closeNav() {
 From being a nervous first timer a few years ago to being the Secretary General of RNPSMUN 2025, the journey has been phenomenal, and I truly hope you find MUNing as delightful as I do. Regardless of whether you win or not, it is the impact you make that matters most. As future global citizens, it is our responsibility to find solutions for the various pressing issues that plague the world today, and change, after all, starts with small conversations among people who care. This conference is a small step that will go a long way. Please feel free to reach out to me in case of any queries.
 
 Looking forward to meeting you all!
+<br><br>
+<span class="text-[#dca646]">-Anshu Deshpande</span>
           </div>
         </div>
         <button type="button" class="read-more" aria-label="Expand content" aria-expanded="false">
@@ -685,7 +689,7 @@ class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 bod
 <!-- Bottom Text -->
 <div class="mx-auto mt-10 md:mt-[-5vh] mb-5 flex flex-col text-center">
   <div class="text-[#dca646]">© R-NPSMUN Inc. All rights reserved.</div>
-  <div class="text-[#dca646] tracking-[2px] name mt-3">
+  <div class="text-[#dca646] uppercase tracking-[2px] name mt-3">
     Made by Vrishank R, Shrivardhan C, Athreya S
   </div>
 </div>
@@ -1046,16 +1050,15 @@ body{
         color: white !important
     }
 
-    .glass{
-        background: rgba(39, 39, 39, 0.1);
-        box-shadow: 0 0 200px rgba(0, 0, 0, 0.7),
-        inset 0 0 100px rgba(255, 255, 255, 0.09);
-    backdrop-filter: blur( 60px );
-    -webkit-backdrop-filter: blur( 60px );
-    border-radius: 20px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    .glass {
+    background: rgba(10, 10, 10, 0.1);
+    box-shadow: 0 2.412vw 5.091vw rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     /* background-color: gray; */
-    }
+  }
+
     .font {
   font-family: "Rozha One", serif;
   font-weight: 400;
@@ -1090,8 +1093,7 @@ body{
 
 
       .name {
-        font-family: "Roboto Condensed", sans-serif;
-  font-optical-sizing: auto;
+        font-family: "Righteous", sans-serif;
   font-weight: 400;
   font-style: normal;
       }
