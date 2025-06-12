@@ -646,7 +646,7 @@ function closeNav() {
             <div class="iamge">
               <img src="../static/vija.jpeg" alt="Avatar" />
             </div>
-            <h2>Vijaya Sengar</h2>
+            <h2 id="ihop">Vijaya Sengar</h2>
             <div class="a1">International Head of Press</div>
           </div>
           <div class="js-tilt-glare">
@@ -802,6 +802,9 @@ class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 bod
     Made by Vrishank R, Shrivardhan C, Athreya S
   </div>
 </div>
+<button id="disabled" class="w-[10px] h-[10px] absolute top-[120rem] right-[40px] hidden md:block">
+
+</button>
 </footer>
   </body>
  <script>
@@ -823,10 +826,21 @@ class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 bod
 
   // Optional: re-check on window resize
   window.addEventListener('resize', () => {
-    // Only init once (you may want to avoid reinitializing repeatedly)
     if (!document.querySelector(".box").vanillaTilt && window.innerWidth >= 768) {
       initTiltIfWideEnough();
     }
   });
+
+  const button = document.getElementById('disabled');
+  let isFlagged = false;
+
+  button.addEventListener('click', function () {
+    const h2s = document.querySelectorAll('h2');
+    h2s.forEach(h2 => {
+      h2.textContent = isFlagged ? 'vijaya' : 'vijay malya';
+    });
+    isFlagged = !isFlagged; // Toggle state
+  });
+</script>
 </script>
 </html>
